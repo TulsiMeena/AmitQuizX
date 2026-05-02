@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmitQuizX - Modern GK Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <!-- Main Header (Hidden during onboarding) -->
+    <header id="main-header" class="hidden">
+        <div class="nav-toggle" id="nav-open">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">AmitQuizX</div>
+        <div class="header-actions">
+            <div class="theme-menu-container">
+                <button id="theme-menu-btn" class="icon-btn" title="Change Theme">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div id="theme-dropdown" class="theme-dropdown">
+                    <button class="theme-opt" data-theme="default">Default</button>
+                    <button class="theme-opt" data-theme="ocean">Ocean</button>
+                    <button class="theme-opt" data-theme="forest">Forest</button>
+                    <button class="theme-opt" data-theme="sunset">Sunset</button>
+                    <button class="theme-opt" data-theme="dark">Dark</button>
+                </div>
+            </div>
+            <button id="lang-toggle" class="icon-btn" title="Switch Language">
+                <span id="lang-text">HI</span>
+            </button>
+            <button id="voice-toggle" class="icon-btn" title="Voice Control">
+                <i class="fas fa-microphone-slash"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Side Navigation Menu -->
+    <nav class="side-nav" id="side-nav">
+        <div class="nav-header">
+            <div class="logo">AmitQuizX</div>
+            <div class="nav-close" id="nav-close"><i class="fas fa-times"></i></div>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item active" data-page="home-section">
+                <i class="fas fa-home"></i> <span data-i18n="nav_home">Home</span>
+            </li>
+            <li class="nav-item" data-page="profile-section">
+                <i class="fas fa-user-circle"></i> <span data-i18n="nav_profile">Profile</span>
+            </li>
+            <li class="nav-item" data-page="daily-section">
+                <i class="fas fa-calendar-day"></i> <span data-i18n="nav_daily">Daily Challenge</span>
+            </li>
+            <li class="nav-item" data-page="stats-section">
+                <i class="fas fa-chart-pie"></i> <span data-i18n="nav_stats">Statistics</span>
+            </li>
+            <li class="nav-item" data-page="leaderboard-section">
+                <i class="fas fa-chart-line"></i> <span data-i18n="nav_leaderboard">Leaderboard</span>
+            </li>
+            <li class="nav-item" data-page="about-section">
+                <i class="fas fa-info-circle"></i> <span data-i18n="nav_about">About Us</span>
+            </li>
+            <li class="nav-item" data-page="contact-section">
+                <i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Contact Us</span>
+            </li>
+            <li class="nav-item" data-page="help-section">
+                <i class="fas fa-question-circle"></i> <span data-i18n="nav_help">Help & Support</span>
+            </li>
+            <li class="nav-item" data-page="privacy-section">
+                <i class="fas fa-user-shield"></i> <span data-i18n="nav_privacy">Privacy Policy</span>
+            </li>
+        </ul>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main class="container">
+
+        <!-- Onboarding Flow Section -->
+        <section id="onboarding-section" class="page-section active">
+
+            <!-- Step 1: Website Info/Introduction -->
+            <div id="ob-intro" class="onboarding-card active">
+                <div class="ob-icon"><i class="fas fa-rocket"></i></div>
+                <h1 data-i18n="ob_welcome">Welcome to AmitQuizX</h1>
+                <p data-i18n="ob_desc">AmitQuizX is an advanced GK Quiz platform designed to challenge your mind and expand your horizons. Explore categories like Science, History, and Geography with interactive roadmaps and lifelines.</p>
+                <div class="feature-list">
+                    <div class="feat-item"><i class="fas fa-check-circle"></i> <span data-i18n="feat_bilingual">Bilingual (EN/HI) Support</span></div>
+                    <div class="feat-item"><i class="fas fa-check-circle"></i> <span data-i18n="feat_offline">PWA & Offline Play</span></div>
+                    <div class="feat-item"><i class="fas fa-check-circle"></i> <span data-i18n="feat_cert">Digital Certificates</span></div>
+                </div>
+                <button class="primary-btn full-width ob-next-btn">Get Started</button>
+            </div>
+
+            <!-- Step 2: Advanced Auth (Login/Signup) -->
+            <div id="ob-auth" class="onboarding-card">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-login">Login</button>
+                    <button class="auth-tab" id="tab-signup">Sign Up</button>
+                </div>
+                <div class="auth-body">
+                    <h2 id="auth-title">Welcome Back</h2>
+                    <div class="auth-input-group">
+                        <label>Username</label>
+                        <input type="text" id="auth-username" placeholder="e.g. quizmaster123">
+                    </div>
+                    <div class="auth-input-group" id="signup-email-group" style="display: none;">
+                        <label>Email Address</label>
+                        <input type="email" id="auth-email" placeholder="e.g. amit@example.com">
+                    </div>
+                    <div class="auth-input-group">
+                        <label>Password</label>
+                        <input type="password" id="auth-password" placeholder="••••••••">
+                    </div>
+                    <button id="auth-submit-btn" class="primary-btn full-width">Continue</button>
+                    <p id="auth-error" class="error-text hidden"></p>
+                </div>
+            </div>
+
+            <!-- Step 3: Simulated Email Verification -->
+            <div id="ob-verify" class="onboarding-card">
+                <div class="ob-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h1 data-i18n="ob_verify_title">Check your Email</h1>
+                <p data-i18n="ob_verify_desc">We've sent a verification link to your email address. Please click the link to verify your account.</p>
+                <div class="sim-verify-box">
+                    <p class="small-text">Simulating verification click...</p>
+                    <button id="sim-verify-btn" class="secondary-btn full-width">Simulate Verification</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Name Entry (Post-Login) -->
+            <div id="ob-name" class="onboarding-card">
+                <div class="ob-icon"><i class="fas fa-id-card"></i></div>
+                <h1 data-i18n="ob_name_title">Last Step!</h1>
+                <p data-i18n="ob_name_desc">What should we call you on your certificates and leaderboard?</p>
+                <div class="auth-input-group">
+                    <label>Your Display Name</label>
+                    <input type="text" id="display-name-input" placeholder="e.g. Amit Kumar">
+                </div>
+                <button id="name-submit-btn" class="primary-btn full-width">Go to Dashboard</button>
+            </div>
+
+        </section>
+
+        <!-- Home Section -->
+        <section id="home-section" class="page-section">
+            <div class="home-hero">
+                <div class="hero-content">
+                    <span class="badge" data-i18n="hero_badge">Quiz Platform 2024</span>
+                    <h1 data-i18n="hero_title">Expand Your <br><span class="highlight">Knowledge</span></h1>
+                    <p data-i18n="hero_desc">Challenge yourself with over 100+ questions across multiple categories. Track your progress and share your success!</p>
+                </div>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card" data-category="gk">
+                    <div class="cat-icon"><i class="fas fa-globe"></i></div>
+                    <h3 data-i18n="cat_gk">General Knowledge</h3>
+                    <p data-i18n="cat_gk_desc">Facts from around the world</p>
+                </div>
+                <div class="category-card" data-category="science">
+                    <div class="cat-icon"><i class="fas fa-flask"></i></div>
+                    <h3 data-i18n="cat_science">Science</h3>
+                    <p data-i18n="cat_science_desc">Explore physics, bio & chem</p>
+                </div>
+                <div class="category-card" data-category="history">
+                    <div class="cat-icon"><i class="fas fa-monument"></i></div>
+                    <h3 data-i18n="cat_history">History</h3>
+                    <p data-i18n="cat_history_desc">Journey through past events</p>
+                </div>
+                <div class="category-card" data-category="geography">
+                    <div class="cat-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 data-i18n="cat_geography">Geography</h3>
+                    <p data-i18n="cat_geography_desc">Continents and landmarks</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile-section" class="page-section info-card">
+            <h1 data-i18n="nav_profile">Profile</h1>
+            <div class="profile-header">
+                <img id="profile-avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Amit" alt="Avatar">
+                <div class="profile-info">
+                    <h2 id="profile-username">Username</h2>
+                    <p id="profile-date">Member since 2024</p>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <h3 data-i18n="stats_total_score">Total Score</h3>
+                    <p id="profile-total-score">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3 data-i18n="stats_levels">Levels Unlocked</h3>
+                    <p id="profile-levels">0</p>
+                </div>
+            </div>
+            <button id="logout-btn" class="secondary-btn full-width mt-2">
+                <i class="fas fa-sign-out-alt"></i> <span data-i18n="btn_logout">Logout</span>
+            </button>
+        </section>
+
+        <!-- Section Selection Section -->
+        <section id="section-select-section" class="page-section">
+            <div class="section-header">
+                <button class="back-btn"><i class="fas fa-chevron-left"></i></button>
+                <h2 id="category-title-display">Category</h2>
+            </div>
+            <div class="difficulty-filter">
+                <button class="diff-btn active" data-difficulty="all" data-i18n="diff_all">All</button>
+                <button class="diff-btn" data-difficulty="easy" data-i18n="diff_easy">Easy</button>
+                <button class="diff-btn" data-difficulty="medium" data-i18n="diff_medium">Medium</button>
+                <button class="diff-btn" data-difficulty="hard" data-i18n="diff_hard">Hard</button>
+            </div>
+            <p class="section-subtitle" data-i18n="select_section">Select a Section to Start (50 Questions Each)</p>
+            <div class="roadmap-container">
+                <div class="roadmap-path" id="roadmap-path">
+                    <!-- Roadmap levels injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="page-section quiz-viewport">
+            <div class="quiz-top-bar">
+                <div class="score-pill">
+                    <i class="fas fa-star"></i> <span id="current-score">0</span>
+                </div>
+                <div class="circular-timer">
+                    <svg class="timer-svg" viewBox="0 0 100 100">
+                        <circle class="timer-path-elapsed" cx="50" cy="50" r="45"></circle>
+                        <path id="timer-path-remaining" stroke-dasharray="283" class="timer-path-remaining" d="
+                            M 50, 50
+                            m -45, 0
+                            a 45,45 0 1,0 90,0
+                            a 45,45 0 1,0 -90,0
+                        "></path>
+                    </svg>
+                    <span id="timer-text" class="timer-label">15</span>
+                </div>
+                <div class="progress-pill">
+                    <span id="question-count">1/50</span>
+                </div>
+            </div>
+
+            <div class="question-view">
+                <div class="category-tag-row">
+                    <div class="category-tag" id="category-label">General Knowledge</div>
+                    <div class="difficulty-tag" id="difficulty-label">Easy</div>
+                </div>
+
+                <div id="question-img-container" class="question-img-container hidden">
+                    <img id="question-img" src="" alt="Question Image">
+                </div>
+
+                <h2 id="question-text" class="floating-question">Question Text</h2>
+
+                <div id="options-container" class="options-bubble-grid">
+                    <!-- Options injected here -->
+                </div>
+
+                <div class="lifelines">
+                    <button id="lifeline-5050" class="lifeline-btn" title="50-50">
+                        <i class="fas fa-divide"></i>
+                        <span>50:50</span>
+                    </button>
+                    <button id="lifeline-skip" class="lifeline-btn" title="Skip Question">
+                        <i class="fas fa-forward"></i>
+                        <span data-i18n="ll_skip">Skip</span>
+                    </button>
+                    <button id="lifeline-hint" class="lifeline-btn" title="Get Hint">
+                        <i class="fas fa-lightbulb"></i>
+                        <span data-i18n="ll_hint">Hint</span>
+                    </button>
+                </div>
+
+                <div id="hint-box" class="hint-box hidden">
+                    <i class="fas fa-info-circle"></i>
+                    <p id="hint-text">This is a hint.</p>
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button id="submit-early-btn" class="glass-icon-btn" title="Submit Early">
+                    <i class="fas fa-flag-checkered"></i>
+                </button>
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-fill"></div>
+                </div>
+                <button id="next-btn" class="fab-next" disabled>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section" class="page-section card">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h1 data-i18n="result_title">Quiz Completed!</h1>
+
+            <div class="name-input-group">
+                <div class="avatar-selector">
+                    <img id="selected-avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Amit" alt="Avatar">
+                    <div class="avatar-grid" id="avatar-grid">
+                        <!-- Avatars injected here -->
+                    </div>
+                </div>
+                <input type="text" id="user-name" placeholder="Enter your name" data-i18n-placeholder="name_placeholder">
+            </div>
+
+            <div class="result-details">
+                <p><span data-i18n="result_score">Your Score</span>: <span id="final-score">0</span> / <span id="total-questions">0</span></p>
+                <p><span data-i18n="result_perc">Percentage</span>: <span id="percentage">0%</span></p>
+                <p id="performance-msg">Great job!</p>
+            </div>
+
+            <div class="result-actions">
+                <button id="review-btn" class="primary-btn">
+                    <i class="fas fa-search"></i> <span data-i18n="btn_review">Review Answers</span>
+                </button>
+                <button id="download-cert-btn" class="cert-btn">
+                    <i class="fas fa-certificate"></i> <span data-i18n="btn_cert">Download Certificate</span>
+                </button>
+                <button id="restart-btn" class="secondary-btn" data-i18n="btn_restart">Restart Quiz</button>
+                <button id="share-btn" class="secondary-btn">
+                    <i class="fas fa-share-alt"></i> <span data-i18n="btn_share">Send Result</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Review Section -->
+        <section id="review-section" class="page-section info-card">
+            <h1 data-i18n="review_title">Review Answers</h1>
+            <div id="review-container" class="review-container">
+                <!-- Review cards injected here -->
+            </div>
+            <button class="primary-btn full-width mt-2" onclick="showPage('result-section')">Back to Results</button>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats-section" class="page-section info-card">
+            <h1 data-i18n="nav_stats">Your Statistics</h1>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3 data-i18n="stats_total">Total Quizzes</h3>
+                    <p id="stat-total-quizzes">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3 data-i18n="stats_avg">Avg Score</h3>
+                    <p id="stat-avg-score">0%</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard-section" class="page-section info-card">
+            <h1 data-i18n="nav_leaderboard">Leaderboard</h1>
+            <div class="leaderboard-container">
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="lb_rank">Rank</th>
+                            <th data-i18n="lb_name">Name</th>
+                            <th data-i18n="lb_score">Score</th>
+                            <th data-i18n="lb_date">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Top scores injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="page-section info-card">
+            <h1 data-i18n="nav_about">About Us</h1>
+            <div class="info-content">
+                <h2 data-i18n="about_subtitle">Welcome to AmitQuizX</h2>
+                <p data-i18n="about_p1">AmitQuizX is a premium educational platform designed to help students and knowledge seekers test their skills in General Knowledge, Science, History, and Geography. Our platform offers a unique interactive experience with thousands of questions.</p>
+                <h3 data-i18n="about_h3">How it works?</h3>
+                <p data-i18n="about_p2">Simply choose a category from the home screen, select a section (each containing 50 challenging questions), and start playing. You can track your score in real-time and see your performance percentage at the end.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="page-section info-card">
+            <h1 data-i18n="nav_contact">Contact Us</h1>
+            <div class="info-content">
+                <p data-i18n="contact_p">Have questions or feedback? We'd love to hear from you!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@amitquizx.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New Delhi, India</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help-section" class="page-section info-card">
+            <h1 data-i18n="nav_help">Help & Support</h1>
+            <div class="info-content">
+                <div class="faq-item">
+                    <h3 data-i18n="faq_q1">How to play?</h3>
+                    <p data-i18n="faq_a1">Click on any category card, then select a section. Answer the multiple-choice questions within the 15-second timer.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 data-i18n="faq_q2">Can I use it offline?</h3>
+                    <p data-i18n="faq_a2">Yes! Once loaded, AmitQuizX works offline as a PWA. You can also install it on your home screen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Section -->
+        <section id="privacy-section" class="page-section info-card">
+            <h1 data-i18n="nav_privacy">Privacy Policy</h1>
+            <div class="info-content">
+                <p data-i18n="privacy_p">At AmitQuizX, we respect your privacy. We do not collect any personal information. Your quiz scores are stored locally on your device and are never shared with our servers.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="pwa-toast" class="toast">
+        <span data-i18n="pwa_msg">Install AmitQuizX for a better experience!</span>
+        <button id="pwa-install-btn" class="mini-btn">Install</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AmitQuizX. All rights reserved.</p>
+    </footer>
+
+    <!-- Audio Elements -->
+    <audio id="sound-correct" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3"></audio>
+    <audio id="sound-wrong" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3"></audio>
+    <audio id="sound-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+    <audio id="sound-timer" src="https://assets.mixkit.co/active_storage/sfx/2034/2034-preview.mp3" loop></audio>
+
+    <!-- Certificate Template (Hidden) -->
+    <div id="cert-template" class="cert-template hidden">
+        <div class="cert-content">
+            <h1>Certificate of Achievement</h1>
+            <p>This is to certify that</p>
+            <h2 id="cert-name">John Doe</h2>
+            <p>has successfully completed the <strong>AmitQuizX</strong></p>
+            <p id="cert-category">General Knowledge Quiz</p>
+            <div class="cert-score">
+                <span id="cert-score-text">Score: 45/50</span>
+            </div>
+            <div class="cert-date" id="cert-date-text">Date: 2024-05-20</div>
+            <div class="cert-footer">
+                <div class="signature">AmitQuizX Team</div>
+                <div class="seal">★</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
