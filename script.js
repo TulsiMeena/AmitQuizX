@@ -10,7 +10,7 @@ const submitEarlyBtn = document.getElementById('submit-early-btn');
 const shareBtn = document.getElementById('share-btn');
 const themeToggle = document.getElementById('theme-toggle');
 
-const categoryBtns = document.querySelectorAll('.category-btn');
+const categoryCards = document.querySelectorAll('.category-card');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
 const questionCountText = document.getElementById('question-count');
@@ -35,11 +35,11 @@ let selectedCategory = 'all';
 // Initialize
 function init() {
     // Category Selection
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            categoryBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            selectedCategory = btn.getAttribute('data-category');
+    categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            categoryCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            selectedCategory = card.getAttribute('data-category');
         });
     });
 
@@ -124,7 +124,7 @@ function showQuestion() {
     categoryLabel.textContent = `Category: ${question.category}`;
 
     // Progress Bar
-    const progress = ((currentQuestionIndex) / currentQuestions.length) * 100;
+    const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
     progressBar.style.width = `${progress}%`;
 
     // Clear previous options

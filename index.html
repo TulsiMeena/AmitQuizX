@@ -24,22 +24,43 @@
 
     <main class="container">
         <!-- Home Section -->
-        <section id="home-section" class="card active">
-            <h1>Test Your General Knowledge</h1>
-            <p>Play daily quizzes and improve your knowledge</p>
-
-            <div class="category-selection">
-                <h3>Select Category</h3>
-                <div class="categories">
-                    <button class="category-btn active" data-category="all">All</button>
-                    <button class="category-btn" data-category="gk">GK</button>
-                    <button class="category-btn" data-category="science">Science</button>
-                    <button class="category-btn" data-category="history">History</button>
-                    <button class="category-btn" data-category="geography">Geography</button>
+        <section id="home-section" class="home-container active">
+            <div class="home-hero">
+                <div class="hero-content">
+                    <span class="badge">Quiz Platform 2024</span>
+                    <h1>Expand Your <br><span class="highlight">Knowledge</span></h1>
+                    <p>Challenge yourself with over 100+ questions across multiple categories. Track your progress and share your success!</p>
+                    <button id="start-btn" class="primary-btn pulse-btn">Start Random Quiz</button>
                 </div>
             </div>
 
-            <button id="start-btn" class="primary-btn">Start Quiz</button>
+            <div class="category-grid">
+                <div class="category-card active" data-category="all">
+                    <div class="cat-icon"><i class="fas fa-th-large"></i></div>
+                    <h3>All Subjects</h3>
+                    <p>Mixed questions from all categories</p>
+                </div>
+                <div class="category-card" data-category="gk">
+                    <div class="cat-icon"><i class="fas fa-globe"></i></div>
+                    <h3>General Knowledge</h3>
+                    <p>Facts from around the world</p>
+                </div>
+                <div class="category-card" data-category="science">
+                    <div class="cat-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Science</h3>
+                    <p>Explore the wonders of physics, bio & chem</p>
+                </div>
+                <div class="category-card" data-category="history">
+                    <div class="cat-icon"><i class="fas fa-monument"></i></div>
+                    <h3>History</h3>
+                    <p>Journey through past events & legends</p>
+                </div>
+                <div class="category-card" data-category="geography">
+                    <div class="cat-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Geography</h3>
+                    <p>Continents, oceans and landmarks</p>
+                </div>
+            </div>
         </section>
 
         <!-- Quiz Section -->
