@@ -525,40 +525,45 @@ h1 {
 
 .faq-item { margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem; }
 
-/* Auth Card */
-.auth-card {
+/* Onboarding & Advanced Auth */
+.onboarding-card {
     background: var(--card-bg);
     padding: 3rem;
     border-radius: 32px;
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow);
-    max-width: 450px;
-    margin: 4rem auto;
+    max-width: 500px;
+    margin: 2rem auto;
     text-align: center;
+    display: none;
+    animation: slideIn 0.5s ease;
 }
 
-.auth-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-.auth-header p { color: var(--text-muted); margin-bottom: 2rem; }
+.onboarding-card.active { display: block; }
 
-.auth-input-group {
-    background: var(--glass-border);
-    border-radius: 15px;
-    padding: 0.8rem 1.2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+@keyframes slideIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-.auth-input-group i { color: var(--primary); width: 20px; }
-.auth-input-group input {
-    background: none;
-    border: none;
-    color: var(--text-main);
-    width: 100%;
-    font-size: 1rem;
-    outline: none;
-}
+.ob-icon { font-size: 4rem; color: var(--primary); margin-bottom: 1.5rem; animation: float 3s infinite ease-in-out; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+.feature-list { text-align: left; margin: 2rem 0; background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 20px; }
+.feat-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; font-weight: 500; }
+.feat-item i { color: var(--correct); }
+
+.auth-tabs { display: flex; background: var(--glass-border); border-radius: 15px; padding: 0.3rem; margin-bottom: 2rem; }
+.auth-tab { flex: 1; border: none; background: none; padding: 0.8rem; border-radius: 12px; cursor: pointer; font-weight: 600; color: var(--text-main); transition: all 0.3s ease; }
+.auth-tab.active { background: white; color: var(--primary); box-shadow: var(--shadow); }
+
+.auth-input-group { text-align: left; margin-bottom: 1.5rem; }
+.auth-input-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem; margin-left: 0.5rem; }
+.auth-input-group input { width: 100%; padding: 1rem; border-radius: 15px; border: 1px solid var(--glass-border); background: var(--card-bg); color: var(--text-main); font-size: 1rem; transition: all 0.3s ease; }
+.auth-input-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); outline: none; }
+
+.sim-verify-box { margin-top: 2rem; padding: 1.5rem; background: rgba(34, 197, 94, 0.05); border-radius: 20px; border: 1px dashed var(--correct); }
+.small-text { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
 
 .error-text { color: var(--wrong); font-size: 0.85rem; margin-top: 0.5rem; }
 .auth-footer { margin-top: 2rem; font-size: 0.9rem; }

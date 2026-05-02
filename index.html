@@ -21,6 +21,7 @@
         <div class="circle circle-3"></div>
     </div>
 
+    <!-- Main Header (Hidden during onboarding) -->
     <header id="main-header" class="hidden">
         <div class="nav-toggle" id="nav-open">
             <i class="fas fa-bars"></i>
@@ -87,29 +88,71 @@
     <div class="nav-overlay" id="nav-overlay"></div>
 
     <main class="container">
-        <!-- Auth Section -->
-        <section id="auth-section" class="page-section active">
-            <div class="auth-card">
-                <div class="auth-header">
-                    <h1 id="auth-title">Welcome Back</h1>
-                    <p id="auth-subtitle">Login to track your progress</p>
+
+        <!-- Onboarding Flow Section -->
+        <section id="onboarding-section" class="page-section active">
+
+            <!-- Step 1: Website Info/Introduction -->
+            <div id="ob-intro" class="onboarding-card active">
+                <div class="ob-icon"><i class="fas fa-rocket"></i></div>
+                <h1 data-i18n="ob_welcome">Welcome to AmitQuizX</h1>
+                <p data-i18n="ob_desc">AmitQuizX is an advanced GK Quiz platform designed to challenge your mind and expand your horizons. Explore categories like Science, History, and Geography with interactive roadmaps and lifelines.</p>
+                <div class="feature-list">
+                    <div class="feat-item"><i class="fas fa-check-circle"></i> <span data-i18n="feat_bilingual">Bilingual (EN/HI) Support</span></div>
+                    <div class="feat-item"><i class="fas fa-check-circle"></i> <span data-i18n="feat_offline">PWA & Offline Play</span></div>
+                    <div class="feat-item"><i class="fas fa-check-circle"></i> <span data-i18n="feat_cert">Digital Certificates</span></div>
                 </div>
-                <div class="auth-form">
+                <button class="primary-btn full-width ob-next-btn">Get Started</button>
+            </div>
+
+            <!-- Step 2: Advanced Auth (Login/Signup) -->
+            <div id="ob-auth" class="onboarding-card">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-login">Login</button>
+                    <button class="auth-tab" id="tab-signup">Sign Up</button>
+                </div>
+                <div class="auth-body">
+                    <h2 id="auth-title">Welcome Back</h2>
                     <div class="auth-input-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" id="auth-username" placeholder="Username">
+                        <label>Username</label>
+                        <input type="text" id="auth-username" placeholder="e.g. quizmaster123">
+                    </div>
+                    <div class="auth-input-group" id="signup-email-group" style="display: none;">
+                        <label>Email Address</label>
+                        <input type="email" id="auth-email" placeholder="e.g. amit@example.com">
                     </div>
                     <div class="auth-input-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="auth-password" placeholder="Password">
+                        <label>Password</label>
+                        <input type="password" id="auth-password" placeholder="••••••••">
                     </div>
-                    <button id="auth-submit-btn" class="primary-btn full-width">Login</button>
-                    <p id="auth-error" class="error-text hidden">Invalid credentials</p>
-                </div>
-                <div class="auth-footer">
-                    <p id="auth-toggle-text">Don't have an account? <a href="#" id="auth-toggle-link">Sign Up</a></p>
+                    <button id="auth-submit-btn" class="primary-btn full-width">Continue</button>
+                    <p id="auth-error" class="error-text hidden"></p>
                 </div>
             </div>
+
+            <!-- Step 3: Simulated Email Verification -->
+            <div id="ob-verify" class="onboarding-card">
+                <div class="ob-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h1 data-i18n="ob_verify_title">Check your Email</h1>
+                <p data-i18n="ob_verify_desc">We've sent a verification link to your email address. Please click the link to verify your account.</p>
+                <div class="sim-verify-box">
+                    <p class="small-text">Simulating verification click...</p>
+                    <button id="sim-verify-btn" class="secondary-btn full-width">Simulate Verification</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Name Entry (Post-Login) -->
+            <div id="ob-name" class="onboarding-card">
+                <div class="ob-icon"><i class="fas fa-id-card"></i></div>
+                <h1 data-i18n="ob_name_title">Last Step!</h1>
+                <p data-i18n="ob_name_desc">What should we call you on your certificates and leaderboard?</p>
+                <div class="auth-input-group">
+                    <label>Your Display Name</label>
+                    <input type="text" id="display-name-input" placeholder="e.g. Amit Kumar">
+                </div>
+                <button id="name-submit-btn" class="primary-btn full-width">Go to Dashboard</button>
+            </div>
+
         </section>
 
         <!-- Home Section -->
