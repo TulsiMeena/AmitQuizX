@@ -21,7 +21,7 @@
         <div class="circle circle-3"></div>
     </div>
 
-    <header>
+    <header id="main-header" class="hidden">
         <div class="nav-toggle" id="nav-open">
             <i class="fas fa-bars"></i>
         </div>
@@ -58,6 +58,9 @@
             <li class="nav-item active" data-page="home-section">
                 <i class="fas fa-home"></i> <span data-i18n="nav_home">Home</span>
             </li>
+            <li class="nav-item" data-page="profile-section">
+                <i class="fas fa-user-circle"></i> <span data-i18n="nav_profile">Profile</span>
+            </li>
             <li class="nav-item" data-page="daily-section">
                 <i class="fas fa-calendar-day"></i> <span data-i18n="nav_daily">Daily Challenge</span>
             </li>
@@ -84,8 +87,33 @@
     <div class="nav-overlay" id="nav-overlay"></div>
 
     <main class="container">
+        <!-- Auth Section -->
+        <section id="auth-section" class="page-section active">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1 id="auth-title">Welcome Back</h1>
+                    <p id="auth-subtitle">Login to track your progress</p>
+                </div>
+                <div class="auth-form">
+                    <div class="auth-input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="auth-username" placeholder="Username">
+                    </div>
+                    <div class="auth-input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="auth-password" placeholder="Password">
+                    </div>
+                    <button id="auth-submit-btn" class="primary-btn full-width">Login</button>
+                    <p id="auth-error" class="error-text hidden">Invalid credentials</p>
+                </div>
+                <div class="auth-footer">
+                    <p id="auth-toggle-text">Don't have an account? <a href="#" id="auth-toggle-link">Sign Up</a></p>
+                </div>
+            </div>
+        </section>
+
         <!-- Home Section -->
-        <section id="home-section" class="page-section active">
+        <section id="home-section" class="page-section">
             <div class="home-hero">
                 <div class="hero-content">
                     <span class="badge" data-i18n="hero_badge">Quiz Platform 2024</span>
@@ -116,6 +144,31 @@
                     <p data-i18n="cat_geography_desc">Continents and landmarks</p>
                 </div>
             </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile-section" class="page-section info-card">
+            <h1 data-i18n="nav_profile">Profile</h1>
+            <div class="profile-header">
+                <img id="profile-avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=Amit" alt="Avatar">
+                <div class="profile-info">
+                    <h2 id="profile-username">Username</h2>
+                    <p id="profile-date">Member since 2024</p>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <h3 data-i18n="stats_total_score">Total Score</h3>
+                    <p id="profile-total-score">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3 data-i18n="stats_levels">Levels Unlocked</h3>
+                    <p id="profile-levels">0</p>
+                </div>
+            </div>
+            <button id="logout-btn" class="secondary-btn full-width mt-2">
+                <i class="fas fa-sign-out-alt"></i> <span data-i18n="btn_logout">Logout</span>
+            </button>
         </section>
 
         <!-- Section Selection Section -->

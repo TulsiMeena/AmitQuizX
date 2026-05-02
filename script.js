@@ -9,6 +9,7 @@ const translations = {
         nav_leaderboard: "Leaderboard",
         nav_daily: "Daily Challenge",
         nav_stats: "Statistics",
+        nav_profile: "Profile",
         hero_badge: "Quiz Platform 2024",
         hero_title: "Expand Your <br><span class='highlight'>Knowledge</span>",
         hero_desc: "Challenge yourself with over 100+ questions across multiple categories. Track your progress and share your success!",
@@ -28,6 +29,7 @@ const translations = {
         btn_share: "Send Result",
         btn_cert: "Download Certificate",
         btn_review: "Review Answers",
+        btn_logout: "Logout",
         pwa_msg: "Install AmitQuizX for a better experience!",
         section_label: "Section",
         diff_all: "All",
@@ -43,7 +45,19 @@ const translations = {
         lb_date: "Date",
         review_title: "Review Answers",
         stats_total: "Total Quizzes",
-        stats_avg: "Avg Score"
+        stats_total_score: "Total Score",
+        stats_levels: "Levels Unlocked",
+        stats_avg: "Avg Score",
+        auth_login_title: "Welcome Back",
+        auth_signup_title: "Create Account",
+        auth_login_sub: "Login to track your progress",
+        auth_signup_sub: "Join AmitQuizX today",
+        auth_login_btn: "Login",
+        auth_signup_btn: "Sign Up",
+        auth_no_account: "Don't have an account? Sign Up",
+        auth_has_account: "Already have an account? Login",
+        auth_err_invalid: "Invalid username or password",
+        auth_err_exists: "Username already exists"
     },
     hi: {
         nav_home: "मुख्य पृष्ठ",
@@ -54,6 +68,7 @@ const translations = {
         nav_leaderboard: "लीडरबोर्ड",
         nav_daily: "दैनिक चुनौती",
         nav_stats: "आँकड़े",
+        nav_profile: "प्रोफ़ाइल",
         hero_badge: "क्विज़ प्लेटफॉर्म 2024",
         hero_title: "अपना <br><span class='highlight'>ज्ञान</span> बढ़ाएं",
         hero_desc: "विभिन्न श्रेणियों में 100+ से अधिक प्रश्नों के साथ स्वयं को चुनौती दें। अपनी प्रगति को ट्रैक करें और अपनी सफलता साझा करें!",
@@ -73,6 +88,7 @@ const translations = {
         btn_share: "रिजल्ट भेजें",
         btn_cert: "प्रमाण पत्र डाउनलोड करें",
         btn_review: "जवाबों की समीक्षा",
+        btn_logout: "लॉगआउट",
         pwa_msg: "बेहतर अनुभव के लिए AmitQuizX इंस्टॉल करें!",
         section_label: "अनुभाग",
         diff_all: "सब",
@@ -88,11 +104,24 @@ const translations = {
         lb_date: "तारीख",
         review_title: "जवाबों की समीक्षा",
         stats_total: "कुल क्विज़",
-        stats_avg: "औसत स्कोर"
+        stats_total_score: "कुल स्कोर",
+        stats_levels: "लेवल अनलॉक",
+        stats_avg: "औसत स्कोर",
+        auth_login_title: "वापसी पर स्वागत है",
+        auth_signup_title: "खाता बनाएं",
+        auth_login_sub: "अपनी प्रगति को ट्रैक करने के लिए लॉगिन करें",
+        auth_signup_sub: "आज ही AmitQuizX से जुड़ें",
+        auth_login_btn: "लॉगिन",
+        auth_signup_btn: "साइन अप",
+        auth_no_account: "खाता नहीं है? साइन अप करें",
+        auth_has_account: "पहले से खाता है? लॉगिन करें",
+        auth_err_invalid: "गलत यूजरनेम या पासवर्ड",
+        auth_err_exists: "यूजरनेम पहले से मौजूद है"
     }
 };
 
 // DOM Elements
+const mainHeader = document.getElementById('main-header');
 const pages = document.querySelectorAll('.page-section');
 const navItems = document.querySelectorAll('.nav-item');
 const sideNav = document.getElementById('side-nav');
@@ -105,6 +134,23 @@ const langText = document.getElementById('lang-text');
 const themeMenuBtn = document.getElementById('theme-menu-btn');
 const themeDropdown = document.getElementById('theme-dropdown');
 const voiceToggle = document.getElementById('voice-toggle');
+
+const authSection = document.getElementById('auth-section');
+const authTitle = document.getElementById('auth-title');
+const authSubtitle = document.getElementById('auth-subtitle');
+const authUsernameInput = document.getElementById('auth-username');
+const authPasswordInput = document.getElementById('auth-password');
+const authSubmitBtn = document.getElementById('auth-submit-btn');
+const authErrorText = document.getElementById('auth-error');
+const authToggleLink = document.getElementById('auth-toggle-link');
+const authToggleText = document.getElementById('auth-toggle-text');
+
+const profileUsername = document.getElementById('profile-username');
+const profileDate = document.getElementById('profile-date');
+const profileTotalScore = document.getElementById('profile-total-score');
+const profileLevels = document.getElementById('profile-levels');
+const profileAvatarImg = document.getElementById('profile-avatar');
+const logoutBtn = document.getElementById('logout-btn');
 
 const categoryCards = document.querySelectorAll('.category-card');
 const roadmapPath = document.getElementById('roadmap-path');
@@ -161,7 +207,7 @@ const sndWrong = document.getElementById('sound-wrong');
 const sndClick = document.getElementById('sound-click');
 const sndTimer = document.getElementById('sound-timer');
 
-// Quiz State
+// App State
 let currentLanguage = 'en';
 let selectedCategory = '';
 let selectedSection = 0;
@@ -172,7 +218,11 @@ let score = 0;
 let timer;
 let timeLeft = 15;
 let deferredPrompt;
-let userChoices = []; // To store user answers for review
+let userChoices = [];
+
+// Auth State
+let currentUser = null;
+let isLoginMode = true;
 
 // Voice Control
 let recognition;
@@ -189,7 +239,8 @@ function init() {
             if (pageId === 'daily-section') startDailyChallenge();
             else if (pageId === 'stats-section') showStats();
             else if (pageId === 'leaderboard-section') loadLeaderboard();
-            else showPage(pageId);
+            else if (pageId === 'profile-section') updateProfileUI();
+            showPage(pageId);
             navItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
             sideNav.classList.remove('open'); navOverlay.classList.remove('show');
@@ -216,8 +267,14 @@ function init() {
         currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
         langText.textContent = currentLanguage === 'en' ? 'HI' : 'EN';
         updateUI();
+        updateAuthUI();
         if (quizSection.classList.contains('active')) renderQuestion();
     });
+
+    // Auth Events
+    authToggleLink.addEventListener('click', (e) => { e.preventDefault(); isLoginMode = !isLoginMode; updateAuthUI(); });
+    authSubmitBtn.addEventListener('click', handleAuth);
+    logoutBtn.addEventListener('click', handleLogout);
 
     // Voice Control
     initVoice();
@@ -266,55 +323,170 @@ function init() {
     pwaInstallBtn.addEventListener('click', () => { pwaToast.classList.remove('show'); deferredPrompt.prompt(); });
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
+    // Check existing session
+    checkSession();
     updateUI();
 }
 
-function showPage(pageId) {
-    pages.forEach(page => { page.classList.remove('active'); if (page.id === pageId) page.classList.add('active'); });
-    window.scrollTo(0,0);
-}
-
-function updateUI() {
-    document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = translations[currentLanguage][el.getAttribute('data-i18n')]; });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = translations[currentLanguage][el.getAttribute('data-i18n-placeholder')]; });
-}
-
-// Avatar Logic
-function initAvatarSelector() {
-    selectedAvatarImg.addEventListener('click', (e) => { e.stopPropagation(); avatarGrid.classList.toggle('show'); });
-    document.addEventListener('click', () => avatarGrid.classList.remove('show'));
-    for (let i = 1; i <= 6; i++) {
-        const img = document.createElement('img');
-        img.src = `https://api.dicebear.com/7.x/bottts/svg?seed=Amit${i}`;
-        img.addEventListener('click', () => {
-            selectedAvatarImg.src = img.src;
-            localStorage.setItem('amitquizx_avatar', img.src);
-            playClick();
-        });
-        avatarGrid.appendChild(img);
+// Auth Logic
+function updateAuthUI() {
+    const lang = translations[currentLanguage];
+    if (isLoginMode) {
+        authTitle.textContent = lang.auth_login_title;
+        authSubtitle.textContent = lang.auth_login_sub;
+        authSubmitBtn.textContent = lang.auth_login_btn;
+        authToggleText.innerHTML = `${lang.auth_no_account} <a href="#" id="auth-toggle-link">${lang.auth_signup_btn}</a>`;
+    } else {
+        authTitle.textContent = lang.auth_signup_title;
+        authSubtitle.textContent = lang.auth_signup_sub;
+        authSubmitBtn.textContent = lang.auth_signup_btn;
+        authToggleText.innerHTML = `${lang.auth_has_account} <a href="#" id="auth-toggle-link">${lang.auth_login_btn}</a>`;
     }
-    const savedAvatar = localStorage.getItem('amitquizx_avatar');
-    if (savedAvatar) selectedAvatarImg.src = savedAvatar;
+    // Re-attach toggle link since innerHTML destroys it
+    document.getElementById('auth-toggle-link').addEventListener('click', (e) => { e.preventDefault(); isLoginMode = !isLoginMode; updateAuthUI(); });
 }
 
-// Section Select
+function handleAuth() {
+    const username = authUsernameInput.value.trim();
+    const password = authPasswordInput.value.trim();
+    if (!username || !password) return;
+
+    let users = JSON.parse(localStorage.getItem('amitquizx_users') || '{}');
+
+    if (isLoginMode) {
+        if (users[username] && users[username].password === password) {
+            login(username);
+        } else {
+            showAuthError('auth_err_invalid');
+        }
+    } else {
+        if (users[username]) {
+            showAuthError('auth_err_exists');
+        } else {
+            users[username] = { password, signupDate: new Date().toDateString(), scores: [], avatar: `https://api.dicebear.com/7.x/bottts/svg?seed=${username}` };
+            localStorage.setItem('amitquizx_users', JSON.stringify(users));
+            login(username);
+        }
+    }
+}
+
+function showAuthError(key) {
+    authErrorText.textContent = translations[currentLanguage][key];
+    authErrorText.classList.remove('hidden');
+    setTimeout(() => authErrorText.classList.add('hidden'), 3000);
+}
+
+function login(username) {
+    currentUser = username;
+    localStorage.setItem('amitquizx_session', username);
+    mainHeader.classList.remove('hidden');
+    userNameInput.value = username;
+    showPage('home-section');
+    updateProfileUI();
+}
+
+function checkSession() {
+    const session = localStorage.getItem('amitquizx_session');
+    if (session) {
+        login(session);
+    } else {
+        showPage('auth-section');
+        mainHeader.classList.add('hidden');
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem('amitquizx_session');
+    currentUser = null;
+    showPage('auth-section');
+    mainHeader.classList.add('hidden');
+}
+
+function updateProfileUI() {
+    if (!currentUser) return;
+    const users = JSON.parse(localStorage.getItem('amitquizx_users') || '{}');
+    const user = users[currentUser];
+    profileUsername.textContent = currentUser;
+    profileDate.textContent = `Joined ${user.signupDate}`;
+    profileAvatarImg.src = user.avatar;
+    selectedAvatarImg.src = user.avatar;
+
+    const total = user.scores.reduce((a, b) => a + b.score, 0);
+    profileTotalScore.textContent = total;
+
+    const completedSections = user.scores.map(s => s.section);
+    const uniqueSections = [...new Set(completedSections)];
+    profileLevels.textContent = uniqueSections.length;
+}
+
+// Stats & Persistence Linked to User
+function saveScore(s, t) {
+    if (!currentUser) return;
+    const users = JSON.parse(localStorage.getItem('amitquizx_users') || '{}');
+    const scoreObj = {
+        score: s,
+        total: t,
+        date: new Date().toLocaleDateString(),
+        category: selectedCategory,
+        section: selectedSection
+    };
+    users[currentUser].scores.push(scoreObj);
+    localStorage.setItem('amitquizx_users', JSON.stringify(users));
+
+    // Also update global leaderboard
+    const lb = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]');
+    lb.push({ name: currentUser, score: s, total: t, date: scoreObj.date, category: selectedCategory });
+    localStorage.setItem('amitquizx_scores', JSON.stringify(lb.sort((a,b)=>(b.score/b.total)-(a.score/a.total)).slice(0, 50)));
+}
+
+function showStats() {
+    if (!currentUser) return;
+    const users = JSON.parse(localStorage.getItem('amitquizx_users') || '{}');
+    const scores = users[currentUser].scores;
+    statTotalQuizzes.textContent = scores.length;
+    const avg = scores.length ? Math.round(scores.reduce((a,b)=>a+(b.score/b.total),0)/scores.length*100) : 0;
+    statAvgScore.textContent = `${avg}%`;
+
+    showPage('stats-section');
+
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+    const catData = { gk:0, science:0, history:0, geography:0 };
+    const counts = { gk:0, science:0, history:0, geography:0 };
+    scores.forEach(s => {
+        if(catData[s.category] !== undefined) {
+            catData[s.category] += (s.score/s.total);
+            counts[s.category]++;
+        }
+    });
+    const finalData = Object.keys(catData).map(k => counts[k] ? Math.round(catData[k]/counts[k]*100) : 0);
+
+    if (window.myChart) window.myChart.destroy();
+    window.myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['GK', 'Science', 'History', 'Geography'],
+            datasets: [{ label: 'Skill Level', data: finalData, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6', borderWidth: 2 }]
+        },
+        options: { scales: { r: { beginAtZero: true, max: 100 } } }
+    });
+}
+
 function showSectionSelection() {
     const data = quizData[selectedCategory];
     categoryTitleDisplay.textContent = currentLanguage === 'en' ? data.title_en : data.title_hi;
     roadmapPath.innerHTML = '';
 
-    // Get progress from localStorage
-    const scores = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]');
-    const completedSections = scores
+    const users = JSON.parse(localStorage.getItem('amitquizx_users') || '{}');
+    const userScores = users[currentUser] ? users[currentUser].scores : [];
+    const completedSections = userScores
         .filter(s => s.category === selectedCategory)
-        .map(s => parseInt(s.section)); // We should save section in score
+        .map(s => parseInt(s.section));
 
     let lastCompleted = Math.max(0, ...completedSections);
 
     for (let i = 1; i <= 6; i++) {
         const node = document.createElement('div');
         node.classList.add('roadmap-node');
-
         const qCount = selectedDifficulty === 'all' ? data.sections[i].length : data.sections[i].filter(q => q.difficulty === selectedDifficulty).length;
 
         if (completedSections.includes(i)) {
@@ -329,14 +501,41 @@ function showSectionSelection() {
         }
 
         node.innerHTML += `<span class="node-label">${translations[currentLanguage].section_label} ${i} (${qCount} Q)</span>`;
-
-        if (!node.classList.contains('locked') && qCount > 0) {
-            node.addEventListener('click', () => startQuiz(i));
-        }
-
+        if (!node.classList.contains('locked') && qCount > 0) node.addEventListener('click', () => startQuiz(i));
         roadmapPath.appendChild(node);
     }
     showPage('section-select-section');
+}
+
+// UI Helpers
+function showPage(pageId) {
+    pages.forEach(page => { page.classList.remove('active'); if (page.id === pageId) page.classList.add('active'); });
+    window.scrollTo(0,0);
+}
+
+function updateUI() {
+    document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = translations[currentLanguage][el.getAttribute('data-i18n')]; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = translations[currentLanguage][el.getAttribute('data-i18n-placeholder')]; });
+}
+
+function initAvatarSelector() {
+    selectedAvatarImg.addEventListener('click', (e) => { e.stopPropagation(); avatarGrid.classList.toggle('show'); });
+    document.addEventListener('click', () => avatarGrid.classList.remove('show'));
+    for (let i = 1; i <= 6; i++) {
+        const img = document.createElement('img');
+        img.src = `https://api.dicebear.com/7.x/bottts/svg?seed=${currentUser || 'Amit'}${i}`;
+        img.addEventListener('click', () => {
+            selectedAvatarImg.src = img.src;
+            if (currentUser) {
+                const users = JSON.parse(localStorage.getItem('amitquizx_users') || '{}');
+                users[currentUser].avatar = img.src;
+                localStorage.setItem('amitquizx_users', JSON.stringify(users));
+                updateProfileUI();
+            }
+            playClick();
+        });
+        avatarGrid.appendChild(img);
+    }
 }
 
 // Daily Challenge
@@ -355,7 +554,7 @@ function startQuiz(sectionNum, isDaily = false) {
     selectedSection = sectionNum;
     let questions = [...quizData[selectedCategory].sections[sectionNum]];
     if (selectedDifficulty !== 'all') questions = questions.filter(q => q.difficulty === selectedDifficulty);
-    if (isDaily) questions = questions.slice(0, 10); // Daily challenge is shorter
+    if (isDaily) questions = questions.slice(0, 10);
     currentQuestions = questions;
     shuffleArray(currentQuestions);
     score = 0; currentQuestionIndex = 0; userChoices = [];
@@ -393,9 +592,7 @@ function handleAnswer(index, el) {
     const correctIdx = currentQuestions[currentQuestionIndex].answer;
     const options = optionsContainer.querySelectorAll('.option');
     options.forEach(o => o.classList.add('disabled'));
-
     userChoices.push({ qIndex: currentQuestionIndex, choice: index, correct: correctIdx });
-
     if (index === correctIdx) {
         if (el) el.classList.add('correct');
         score++; currentScoreText.textContent = score;
@@ -466,47 +663,6 @@ function buildReview() {
     });
 }
 
-function saveScore(s, t) {
-    const scores = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]');
-    scores.push({
-        name: userNameInput.value || 'Anonymous',
-        score: s,
-        total: t,
-        date: new Date().toLocaleDateString(),
-        category: selectedCategory,
-        section: selectedSection
-    });
-    localStorage.setItem('amitquizx_scores', JSON.stringify(scores.slice(-50)));
-}
-
-function showStats() {
-    const scores = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]');
-    statTotalQuizzes.textContent = scores.length;
-    const avg = scores.length ? Math.round(scores.reduce((a,b)=>a+(b.score/b.total),0)/scores.length*100) : 0;
-    statAvgScore.textContent = `${avg}%`;
-
-    showPage('stats-section');
-
-    // Performance Chart
-    const ctx = document.getElementById('performanceChart').getContext('2d');
-    const catData = { gk:0, science:0, history:0, geography:0 };
-    scores.forEach(s => { if(catData[s.category] !== undefined) catData[s.category] += (s.score/s.total); });
-    const counts = { gk:0, science:0, history:0, geography:0 };
-    scores.forEach(s => { if(counts[s.category] !== undefined) counts[s.category]++; });
-
-    const finalData = Object.keys(catData).map(k => counts[k] ? Math.round(catData[k]/counts[k]*100) : 0);
-
-    if (window.myChart) window.myChart.destroy();
-    window.myChart = new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: ['GK', 'Science', 'History', 'Geography'],
-            datasets: [{ label: 'Skill Level', data: finalData, backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6', borderWidth: 2 }]
-        },
-        options: { scales: { r: { beginAtZero: true, max: 100 } } }
-    });
-}
-
 function loadLeaderboard() {
     const scores = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]').sort((a,b)=>(b.score/b.total)-(a.score/a.total));
     leaderboardBody.innerHTML = '';
@@ -525,7 +681,6 @@ function initVoice() {
     recognition.lang = 'en-US';
     recognition.onresult = (event) => {
         const transcript = event.results[event.results.length - 1][0].transcript.toLowerCase();
-        console.log("Voice:", transcript);
         if (transcript.includes("option a") || transcript.includes("विकल्प ए")) selectOptionVoice(0);
         if (transcript.includes("option b") || transcript.includes("विकल्प बी")) selectOptionVoice(1);
         if (transcript.includes("option c") || transcript.includes("विकल्प सी")) selectOptionVoice(2);
@@ -544,7 +699,7 @@ function selectOptionVoice(idx) {
 }
 
 function generateCertificate() {
-    const name = userNameInput.value || "Participant";
+    const name = currentUser || "Participant";
     document.getElementById('cert-name').textContent = name;
     document.getElementById('cert-category').textContent = `${quizData[selectedCategory].title_en} Quiz`;
     document.getElementById('cert-score-text').textContent = `Score: ${score}/${currentQuestions.length}`;
