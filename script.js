@@ -6,6 +6,8 @@ const resultSection = document.getElementById('result-section');
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
 const restartBtn = document.getElementById('restart-btn');
+const submitEarlyBtn = document.getElementById('submit-early-btn');
+const shareBtn = document.getElementById('share-btn');
 const themeToggle = document.getElementById('theme-toggle');
 
 const categoryBtns = document.querySelectorAll('.category-btn');
@@ -54,6 +56,16 @@ function init() {
         }
     });
 
+    // Submit Early
+    submitEarlyBtn.addEventListener('click', () => {
+        if (confirm("Are you sure you want to submit the quiz now?")) {
+            showResults();
+        }
+    });
+
+    // Share Result
+    shareBtn.addEventListener('click', shareResult);
+
     // Restart Quiz
     restartBtn.addEventListener('click', () => {
         resultSection.classList.remove('active');
@@ -87,8 +99,8 @@ function startQuiz() {
     // Shuffle questions
     shuffleArray(currentQuestions);
 
-    // Take max 10 questions for a session
-    currentQuestions = currentQuestions.slice(0, 10);
+    // Take max 50 questions for a session
+    currentQuestions = currentQuestions.slice(0, 50);
 
     resetQuiz();
     homeSection.classList.remove('active');
@@ -203,6 +215,12 @@ function autoHandleTimeout() {
 function showResults() {
     quizSection.classList.remove('active');
     resultSection.classList.add('active');
+    clearInterval(timer);
+
+    // If submitted early, total is the current number of questions seen
+    // But usually people want to know how many they got right out of the total potential questions
+    // User said "number betaye seccor bhi betaye % bhi"
+    // I'll show score out of total questions in the set (50)
 
     const total = currentQuestions.length;
     const percentage = (score / total) * 100;
@@ -217,6 +235,25 @@ function showResults() {
         performanceMsg.textContent = "Good job! Keep it up!";
     } else {
         performanceMsg.textContent = "Keep practicing, you'll get better!";
+    }
+}
+
+function shareResult() {
+    const total = currentQuestions.length;
+    const percentage = Math.round((score / total) * 100);
+    const text = `I scored ${score}/${total} (${percentage}%) on AmitQuizX! Can you beat my score? 🏆`;
+    const url = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'AmitQuizX Result',
+            text: text,
+            url: url
+        }).catch(err => console.log('Error sharing:', err));
+    } else {
+        // Fallback to WhatsApp
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`;
+        window.open(whatsappUrl, '_blank');
     }
 }
 

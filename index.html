@@ -46,7 +46,7 @@
         <section id="quiz-section" class="card">
             <div class="quiz-header">
                 <div class="quiz-info">
-                    <span id="question-count">Question 1/10</span>
+                    <span id="question-count">Question 1/50</span>
                     <span id="category-label">Category: GK</span>
                 </div>
                 <div class="timer">
@@ -70,7 +70,10 @@
                 <div class="score-display">
                     Score: <span id="current-score">0</span>
                 </div>
-                <button id="next-btn" class="primary-btn" disabled>Next Question</button>
+                <div class="quiz-actions">
+                    <button id="submit-early-btn" class="secondary-btn">Submit Quiz</button>
+                    <button id="next-btn" class="primary-btn" disabled>Next Question</button>
+                </div>
             </div>
         </section>
 
@@ -85,7 +88,12 @@
                 <p>Percentage: <span id="percentage">0%</span></p>
                 <p id="performance-msg">Great job!</p>
             </div>
-            <button id="restart-btn" class="primary-btn">Restart Quiz</button>
+            <div class="result-actions">
+                <button id="restart-btn" class="primary-btn">Restart Quiz</button>
+                <button id="share-btn" class="secondary-btn">
+                    <i class="fas fa-share-alt"></i> Send Result
+                </button>
+            </div>
         </section>
     </main>
 
