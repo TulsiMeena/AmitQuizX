@@ -491,10 +491,29 @@ h1 {
 @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
 .options-bubble-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.option { background: var(--card-bg); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border); cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 500; min-height: 80px; }
+.option { background: var(--card-bg); padding: 1.2rem; border-radius: 20px; border: 1px solid var(--glass-border); cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 1rem; text-align: left; font-weight: 500; min-height: 80px; }
 .option:hover { background: white; transform: scale(1.02); }
 .option.correct { background: var(--correct); color: white; border-color: var(--correct); }
 .option.wrong { background: var(--wrong); color: white; border-color: var(--wrong); }
+
+.option-label {
+    background: var(--primary);
+    color: white;
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.option.correct .option-label { background: white; color: var(--correct); box-shadow: none; }
+.option.wrong .option-label { background: white; color: var(--wrong); box-shadow: none; }
+
+.option-text { flex-grow: 1; }
 .option.disabled { pointer-events: none; }
 
 .quiz-controls { margin-top: 3rem; display: flex; align-items: center; gap: 1.5rem; }

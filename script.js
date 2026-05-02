@@ -418,8 +418,10 @@ function renderQuestion() {
     difficultyLabel.textContent = q.difficulty.toUpperCase(); difficultyLabel.className = `difficulty-tag ${q.difficulty}`;
     if (q.img) { questionImg.src = q.img; questionImgContainer.classList.remove('hidden'); }
     optionsContainer.innerHTML = '';
+    const optionLabels = ['A', 'B', 'C', 'D'];
     (currentLanguage === 'en' ? q.options_en : q.options_hi).forEach((opt, idx) => {
-        const div = document.createElement('div'); div.classList.add('option'); div.textContent = opt;
+        const div = document.createElement('div'); div.classList.add('option');
+        div.innerHTML = `<span class="option-label">${optionLabels[idx]}</span><span class="option-text">${opt}</span>`;
         div.addEventListener('click', () => handleAnswer(idx, div)); optionsContainer.appendChild(div);
     });
     categoryLabel.textContent = currentLanguage === 'en' ? quizData[selectedCategory].title_en : quizData[selectedCategory].title_hi;
@@ -473,7 +475,11 @@ function initVoice() {
     recognition = new Rec(); recognition.continuous = true; recognition.lang = 'en-US';
     recognition.onresult = (e) => {
         const t = e.results[e.results.length - 1][0].transcript.toLowerCase();
-        if (t.includes("option a")) selectVoice(0); if (t.includes("option b")) selectVoice(1); if (t.includes("option c")) selectVoice(2); if (t.includes("option d")) selectVoice(3); if (t.includes("next")) nextBtn.click();
+        if (t.includes("option a") || t === "a" || t === "ए") selectVoice(0);
+        if (t.includes("option b") || t === "b" || t === "बी") selectVoice(1);
+        if (t.includes("option c") || t === "c" || t === "सी") selectVoice(2);
+        if (t.includes("option d") || t === "d" || t === "डी") selectVoice(3);
+        if (t.includes("next") || t.includes("अगला")) nextBtn.click();
     };
 }
 function toggleVoice() { isVoiceActive = !isVoiceActive; if (isVoiceActive) { recognition.start(); voiceToggle.classList.add('active'); voiceToggle.innerHTML = '<i class="fas fa-microphone"></i>'; } else { recognition.stop(); voiceToggle.classList.remove('active'); voiceToggle.innerHTML = '<i class="fas fa-microphone-slash"></i>'; } }
