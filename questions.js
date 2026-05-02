@@ -124,30 +124,6 @@ const quizData = {
                     explanation_en: "Alexander Graham Bell is credited with patenting the first practical telephone.",
                     explanation_hi: "अलेक्जेंडर ग्राहम बेल को पहले व्यावहारिक टेलीफोन के पेटेंट का श्रेय दिया जाता है।",
                     difficulty: "easy"
-                },
-                {
-                    q_en: "Which is the tallest building in the world?",
-                    q_hi: "दुनिया की सबसे ऊंची इमारत कौन सी है?",
-                    options_en: ["Shanghai Tower", "Burj Khalifa", "Abraj Al-Bait Clock Tower", "Ping An Finance Center"],
-                    options_hi: ["शंघाई टॉवर", "बुर्ज खलीफा", "अबराज अल-बैत क्लॉक टॉवर", "पिंग एन फाइनेंस सेंटर"],
-                    answer: 1,
-                    hint_en: "It is located in Dubai.",
-                    hint_hi: "यह दुबई में स्थित है।",
-                    explanation_en: "Burj Khalifa in Dubai stands at 828 meters.",
-                    explanation_hi: "दुबई में बुर्ज खलीफा 828 मीटर ऊंचा है।",
-                    difficulty: "easy"
-                },
-                {
-                    q_en: "Who was the first man to walk on the moon?",
-                    q_hi: "चंद्रमा पर चलने वाला पहला व्यक्ति कौन था?",
-                    options_en: ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Michael Collins"],
-                    options_hi: ["बज़ एल्ड्रिन", "नील आर्मस्ट्रांग", "यूरी गागरिन", "माइकल कोलिन्स"],
-                    answer: 1,
-                    hint_en: "He said, 'That's one small step for man...'",
-                    hint_hi: "उन्होंने कहा था, 'यह मनुष्य के लिए एक छोटा कदम है...'।",
-                    explanation_en: "Neil Armstrong walked on the moon during the Apollo 11 mission in 1969.",
-                    explanation_hi: "नील आर्मस्ट्रांग ने 1969 में अपोलो 11 मिशन के दौरान चंद्रमा पर चहलकदमी की थी।",
-                    difficulty: "medium"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -276,18 +252,6 @@ const quizData = {
                     hint_hi: "यह ब्रह्मांड में सबसे प्रचुर मात्रा में पाया जाने वाला तत्व है।",
                     explanation_en: "Hydrogen is the first element on the periodic table with one proton.",
                     explanation_hi: "हाइड्रोजन आवर्त सारणी का पहला तत्व है जिसमें एक प्रोटॉन होता है।",
-                    difficulty: "medium"
-                },
-                {
-                    q_en: "Which gas is most abundant in the Earth's atmosphere?",
-                    q_hi: "पृथ्वी के वायुमंडल में कौन सी गैस सबसे प्रचुर मात्रा में है?",
-                    options_en: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
-                    options_hi: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "आर्गन"],
-                    answer: 2,
-                    hint_en: "It makes up about 78% of the air.",
-                    hint_hi: "यह हवा का लगभग 78% हिस्सा बनाता है।",
-                    explanation_en: "Nitrogen is the most abundant gas, followed by Oxygen (21%).",
-                    explanation_hi: "नाइट्रोजन सबसे प्रचुर मात्रा में पाई जाने वाली गैस है, उसके बाद ऑक्सीजन (21%) का स्थान है।",
                     difficulty: "medium"
                 }
             ],
@@ -418,18 +382,6 @@ const quizData = {
                     explanation_en: "Aristotle was hired by Philip II of Macedon to tutor Alexander.",
                     explanation_hi: "मैसेडोन के फिलिप द्वितीय ने सिकंदर को ट्यूशन देने के लिए अरस्तू को काम पर रखा था।",
                     difficulty: "hard"
-                },
-                {
-                    q_en: "Who was the first woman to win a Nobel Prize?",
-                    q_hi: "नोबेल पुरस्कार जीतने वाली पहली महिला कौन थीं?",
-                    options_en: ["Marie Curie", "Mother Teresa", "Jane Addams", "Alva Myrdal"],
-                    options_hi: ["मैरी क्यूरी", "मदर टेरेसा", "जेन एडम्स", "अल्वा मायर्डल"],
-                    answer: 0,
-                    hint_en: "She won it for her work on radioactivity.",
-                    hint_hi: "उन्होंने रेडियोधर्मिता पर अपने काम के लिए इसे जीता था।",
-                    explanation_en: "Marie Curie was the first woman to win a Nobel Prize and the only person to win in two different sciences.",
-                    explanation_hi: "मैरी क्यूरी नोबेल पुरस्कार जीतने वाली पहली महिला थीं और दो अलग-अलग विज्ञानों में जीतने वाली एकमात्र व्यक्ति थीं।",
-                    difficulty: "medium"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -559,18 +511,6 @@ const quizData = {
                     explanation_en: "Indonesia has the highest number of active volcanoes in the world.",
                     explanation_hi: "इंडोनेशिया में दुनिया में सबसे अधिक सक्रिय ज्वालामुखी हैं।",
                     difficulty: "hard"
-                },
-                {
-                    q_en: "Which is the smallest continent by land area?",
-                    q_hi: "भूमि क्षेत्रफल के हिसाब से सबसे छोटा महाद्वीप कौन सा है?",
-                    options_en: ["Europe", "Antarctica", "Australia", "South America"],
-                    options_hi: ["यूरोप", "अंटार्कटिका", "ऑस्ट्रेलिया", "दक्षिण अमेरिका"],
-                    answer: 2,
-                    hint_en: "It is also known as the island continent.",
-                    hint_hi: "इसे द्वीप महाद्वीप के रूप में भी जाना जाता है।",
-                    explanation_en: "Australia is the smallest continent and also a country.",
-                    explanation_hi: "ऑस्ट्रेलिया सबसे छोटा महाद्वीप है और एक देश भी है।",
-                    difficulty: "easy"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []

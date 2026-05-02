@@ -419,10 +419,12 @@ function renderQuestion() {
     if (q.img) { questionImg.src = q.img; questionImgContainer.classList.remove('hidden'); }
     optionsContainer.innerHTML = '';
     const optionLabels = ['A', 'B', 'C', 'D'];
-    (currentLanguage === 'en' ? q.options_en : q.options_hi).forEach((opt, idx) => {
+    const options = currentLanguage === 'en' ? q.options_en : q.options_hi;
+    options.forEach((opt, idx) => {
         const div = document.createElement('div'); div.classList.add('option');
         div.innerHTML = `<span class="option-label">${optionLabels[idx]}</span><span class="option-text">${opt}</span>`;
-        div.addEventListener('click', () => handleAnswer(idx, div)); optionsContainer.appendChild(div);
+        div.addEventListener('click', () => handleAnswer(idx, div));
+        optionsContainer.appendChild(div);
     });
     categoryLabel.textContent = currentLanguage === 'en' ? quizData[selectedCategory].title_en : quizData[selectedCategory].title_hi;
     questionCountText.textContent = `${currentQuestionIndex + 1}/${currentQuestions.length}`;
