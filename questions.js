@@ -12,6 +12,8 @@ const quizData = {
                     answer: 2,
                     hint_en: "It covers your entire body.",
                     hint_hi: "यह आपके पूरे शरीर को ढकता है।",
+                    explanation_en: "The skin is the largest organ of the body, covering about 2 square meters.",
+                    explanation_hi: "त्वचा शरीर का सबसे बड़ा अंग है, जो लगभग 2 वर्ग मीटर को कवर करती है।",
                     difficulty: "easy"
                 },
                 {
@@ -22,6 +24,8 @@ const quizData = {
                     answer: 2,
                     hint_en: "He was the first Deputy Prime Minister of India.",
                     hint_hi: "वे भारत के पहले उप प्रधानमंत्री थे।",
+                    explanation_en: "Sardar Patel is called the Iron Man of India for his role in integrating princely states.",
+                    explanation_hi: "रियासतों के एकीकरण में उनकी भूमिका के लिए सरदार पटेल को भारत का लौह पुरुष कहा जाता है।",
                     difficulty: "medium"
                 },
                 {
@@ -32,6 +36,8 @@ const quizData = {
                     answer: 1,
                     hint_en: "It starts with 'Y'.",
                     hint_hi: "यह 'Y' से शुरू होता है।",
+                    explanation_en: "The Yen is the official currency of Japan and the third most traded currency.",
+                    explanation_hi: "येन जापान की आधिकारिक मुद्रा है और तीसरी सबसे अधिक कारोबार वाली मुद्रा है।",
                     difficulty: "easy"
                 },
                 {
@@ -42,18 +48,10 @@ const quizData = {
                     answer: 1,
                     hint_en: "It is located in Agra, India.",
                     hint_hi: "यह आगरा, भारत में स्थित है।",
+                    explanation_en: "The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna.",
+                    explanation_hi: "ताजमहल यमुना नदी के दाहिने किनारे पर एक हाथीदांत-सफेद संगमरमर का मकबरा है।",
                     difficulty: "easy",
                     img: "https://images.unsplash.com/photo-1564507592333-c60657eea023?auto=format&fit=crop&w=400&q=80"
-                },
-                {
-                    q_en: "Which is the longest river in the world?",
-                    q_hi: "विश्व की सबसे लंबी नदी कौन सी है?",
-                    options_en: ["Amazon", "Nile", "Yangtze", "Mississippi"],
-                    options_hi: ["अमेज़न", "नील", "यांग्त्ज़ी", "मिसिसिपी"],
-                    answer: 1,
-                    hint_en: "It is located in Africa.",
-                    hint_hi: "यह अफ्रीका में स्थित है।",
-                    difficulty: "medium"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -72,6 +70,8 @@ const quizData = {
                     answer: 2,
                     hint_en: "Two hydrogen atoms and one oxygen atom.",
                     hint_hi: "दो हाइड्रोजन परमाणु और एक ऑक्सीजन परमाणु।",
+                    explanation_en: "H2O stands for two Hydrogen atoms and one Oxygen atom.",
+                    explanation_hi: "H2O का अर्थ है दो हाइड्रोजन परमाणु और एक ऑक्सीजन परमाणु।",
                     difficulty: "easy"
                 }
             ],
@@ -91,6 +91,8 @@ const quizData = {
                     answer: 0,
                     hint_en: "He was born in Bihar.",
                     hint_hi: "उनका जन्म बिहार में हुआ था।",
+                    explanation_en: "Dr. Rajendra Prasad was the first President of India from 1950 to 1962.",
+                    explanation_hi: "डॉ. राजेंद्र प्रसाद 1950 से 1962 तक भारत के पहले राष्ट्रपति थे।",
                     difficulty: "medium"
                 }
             ],
@@ -106,10 +108,12 @@ const quizData = {
                     q_en: "Which is the largest desert in the world?",
                     q_hi: "दुनिया का सबसे बड़ा रेगिस्तान कौन सा है?",
                     options_en: ["Sahara", "Gobi", "Kalahari", "Antarctic Desert"],
-                    options_hi: ["सहारा", "गोबी", "कालाहारी", "अंटार्कटिक रेगिस्तान"],
+                    options_hi: ["सहारा", "गोबी", "कालाहारी", "अंटार्टिक रेगिस्तान"],
                     answer: 3,
                     hint_en: "It's not a hot desert.",
                     hint_hi: "यह गर्म रेगिस्तान नहीं है।",
+                    explanation_en: "Antarctica is technically a desert because it receives very little precipitation.",
+                    explanation_hi: "अंटार्कटिका तकनीकी रूप से एक रेगिस्तान है क्योंकि वहां बहुत कम वर्षा होती है।",
                     difficulty: "hard"
                 }
             ],
@@ -133,6 +137,8 @@ function populateMockQuestions() {
                     answer: Math.floor(Math.random() * 4),
                     hint_en: `Hint for ${quizData[cat].title_en} Q${i}`,
                     hint_hi: `${quizData[cat].title_hi} प्रश्न ${i} के लिए संकेत`,
+                    explanation_en: `Explanation for ${quizData[cat].title_en} Question ${i}. This is a detailed fact about the correct answer.`,
+                    explanation_hi: `${quizData[cat].title_hi} प्रश्न ${i} का विवरण। यह सही उत्तर के बारे में एक विस्तृत तथ्य है।`,
                     difficulty: diff
                 });
             }
