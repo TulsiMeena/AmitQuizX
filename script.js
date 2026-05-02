@@ -18,6 +18,7 @@ const categoryLabel = document.getElementById('category-label');
 const currentScoreText = document.getElementById('current-score');
 const progressBar = document.getElementById('progress-bar');
 const timerText = document.getElementById('timer-text');
+const timerPathRemaining = document.getElementById('timer-path-remaining');
 
 const finalScoreText = document.getElementById('final-score');
 const totalQuestionsText = document.getElementById('total-questions');
@@ -120,8 +121,8 @@ function showQuestion() {
 
     // Update UI
     questionText.textContent = question.question;
-    questionCountText.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
-    categoryLabel.textContent = `Category: ${question.category}`;
+    questionCountText.textContent = `${currentQuestionIndex + 1}/${currentQuestions.length}`;
+    categoryLabel.textContent = question.category;
 
     // Progress Bar
     const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
@@ -134,10 +135,7 @@ function showQuestion() {
     question.options.forEach((option, index) => {
         const optionElement = document.createElement('div');
         optionElement.classList.add('option');
-        optionElement.innerHTML = `
-            <span>${option}</span>
-            <i class="fas"></i>
-        `;
+        optionElement.innerHTML = `<span>${option}</span>`;
         optionElement.addEventListener('click', () => selectOption(index, optionElement));
         optionsContainer.appendChild(optionElement);
     });
@@ -160,19 +158,14 @@ function selectOption(index, element) {
     if (index === question.answer) {
         // Correct
         element.classList.add('correct');
-        element.querySelector('i').classList.add('fa-check-circle');
         score++;
         currentScoreText.textContent = score;
-        // playSound('correct'); // Optional
     } else {
         // Wrong
         element.classList.add('wrong');
-        element.querySelector('i').classList.add('fa-times-circle');
 
         // Show correct answer
         allOptions[question.answer].classList.add('correct');
-        allOptions[question.answer].querySelector('i').classList.add('fa-check-circle');
-        // playSound('wrong'); // Optional
     }
 
     nextBtn.disabled = false;
@@ -181,15 +174,16 @@ function selectOption(index, element) {
 function startTimer() {
     clearInterval(timer);
     timeLeft = 15;
-    timerText.textContent = `${timeLeft}s`;
-    document.querySelector('.timer').classList.remove('warning');
+    updateTimerUI(timeLeft);
+    const circularTimer = document.querySelector('.circular-timer');
+    circularTimer.classList.remove('warning');
 
     timer = setInterval(() => {
         timeLeft--;
-        timerText.textContent = `${timeLeft}s`;
+        updateTimerUI(timeLeft);
 
         if (timeLeft <= 5) {
-            document.querySelector('.timer').classList.add('warning');
+            circularTimer.classList.add('warning');
         }
 
         if (timeLeft <= 0) {
@@ -197,6 +191,13 @@ function startTimer() {
             autoHandleTimeout();
         }
     }, 1000);
+}
+
+function updateTimerUI(seconds) {
+    timerText.textContent = seconds;
+    const timeFraction = seconds / 15;
+    const dashArray = `${(timeFraction * 283).toFixed(0)} 283`;
+    timerPathRemaining.setAttribute('stroke-dasharray', dashArray);
 }
 
 function autoHandleTimeout() {
@@ -207,7 +208,6 @@ function autoHandleTimeout() {
 
     // Show correct answer
     allOptions[question.answer].classList.add('correct');
-    allOptions[question.answer].querySelector('i').classList.add('fa-check-circle');
 
     nextBtn.disabled = false;
 }
