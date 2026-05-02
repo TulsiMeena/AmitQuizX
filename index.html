@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
 </head>
 <body>
     <div class="background-circles">
@@ -16,55 +19,95 @@
     </div>
 
     <header>
+        <div class="nav-toggle" id="nav-open">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="logo">AmitQuizX</div>
-        <button id="theme-toggle" class="theme-toggle">
-            <i class="fas fa-moon"></i>
-        </button>
+        <div class="header-actions">
+            <button id="lang-toggle" class="icon-btn" title="Switch Language">
+                <span id="lang-text">HI</span>
+            </button>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </header>
+
+    <!-- Side Navigation Menu -->
+    <nav class="side-nav" id="side-nav">
+        <div class="nav-header">
+            <div class="logo">AmitQuizX</div>
+            <div class="nav-close" id="nav-close"><i class="fas fa-times"></i></div>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item active" data-page="home-section">
+                <i class="fas fa-home"></i> <span data-i18n="nav_home">Home</span>
+            </li>
+            <li class="nav-item" data-page="about-section">
+                <i class="fas fa-info-circle"></i> <span data-i18n="nav_about">About Us</span>
+            </li>
+            <li class="nav-item" data-page="contact-section">
+                <i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Contact Us</span>
+            </li>
+            <li class="nav-item" data-page="help-section">
+                <i class="fas fa-question-circle"></i> <span data-i18n="nav_help">Help & Support</span>
+            </li>
+            <li class="nav-item" data-page="privacy-section">
+                <i class="fas fa-user-shield"></i> <span data-i18n="nav_privacy">Privacy Policy</span>
+            </li>
+        </ul>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <main class="container">
         <!-- Home Section -->
-        <section id="home-section" class="home-container active">
+        <section id="home-section" class="page-section active">
             <div class="home-hero">
                 <div class="hero-content">
-                    <span class="badge">Quiz Platform 2024</span>
-                    <h1>Expand Your <br><span class="highlight">Knowledge</span></h1>
-                    <p>Challenge yourself with over 100+ questions across multiple categories. Track your progress and share your success!</p>
-                    <button id="start-btn" class="primary-btn pulse-btn">Start Random Quiz</button>
+                    <span class="badge" data-i18n="hero_badge">Quiz Platform 2024</span>
+                    <h1 data-i18n="hero_title">Expand Your <br><span class="highlight">Knowledge</span></h1>
+                    <p data-i18n="hero_desc">Challenge yourself with over 100+ questions across multiple categories. Track your progress and share your success!</p>
                 </div>
             </div>
 
             <div class="category-grid">
-                <div class="category-card active" data-category="all">
-                    <div class="cat-icon"><i class="fas fa-th-large"></i></div>
-                    <h3>All Subjects</h3>
-                    <p>Mixed questions from all categories</p>
-                </div>
                 <div class="category-card" data-category="gk">
                     <div class="cat-icon"><i class="fas fa-globe"></i></div>
-                    <h3>General Knowledge</h3>
-                    <p>Facts from around the world</p>
+                    <h3 data-i18n="cat_gk">General Knowledge</h3>
+                    <p data-i18n="cat_gk_desc">Facts from around the world</p>
                 </div>
                 <div class="category-card" data-category="science">
                     <div class="cat-icon"><i class="fas fa-flask"></i></div>
-                    <h3>Science</h3>
-                    <p>Explore the wonders of physics, bio & chem</p>
+                    <h3 data-i18n="cat_science">Science</h3>
+                    <p data-i18n="cat_science_desc">Explore physics, bio & chem</p>
                 </div>
                 <div class="category-card" data-category="history">
                     <div class="cat-icon"><i class="fas fa-monument"></i></div>
-                    <h3>History</h3>
-                    <p>Journey through past events & legends</p>
+                    <h3 data-i18n="cat_history">History</h3>
+                    <p data-i18n="cat_history_desc">Journey through past events</p>
                 </div>
                 <div class="category-card" data-category="geography">
                     <div class="cat-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    <h3>Geography</h3>
-                    <p>Continents, oceans and landmarks</p>
+                    <h3 data-i18n="cat_geography">Geography</h3>
+                    <p data-i18n="cat_geography_desc">Continents and landmarks</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section Selection Section -->
+        <section id="section-select-section" class="page-section">
+            <div class="section-header">
+                <button class="back-btn"><i class="fas fa-chevron-left"></i></button>
+                <h2 id="category-title-display">Category</h2>
+            </div>
+            <p class="section-subtitle" data-i18n="select_section">Select a Section to Start (50 Questions Each)</p>
+            <div class="section-grid" id="section-grid">
+                <!-- Sections 1-6 injected here -->
+            </div>
+        </section>
+
         <!-- Quiz Section -->
-        <section id="quiz-section" class="quiz-viewport">
+        <section id="quiz-section" class="page-section quiz-viewport">
             <div class="quiz-top-bar">
                 <div class="score-pill">
                     <i class="fas fa-star"></i> <span id="current-score">0</span>
@@ -88,7 +131,7 @@
 
             <div class="question-view">
                 <div class="category-tag" id="category-label">General Knowledge</div>
-                <h2 id="question-text" class="floating-question">Ready to start?</h2>
+                <h2 id="question-text" class="floating-question">Question Text</h2>
 
                 <div id="options-container" class="options-bubble-grid">
                     <!-- Options injected here -->
@@ -109,24 +152,85 @@
         </section>
 
         <!-- Result Section -->
-        <section id="result-section" class="card">
+        <section id="result-section" class="page-section card">
             <div class="result-icon">
                 <i class="fas fa-trophy"></i>
             </div>
-            <h1>Quiz Completed!</h1>
+            <h1 data-i18n="result_title">Quiz Completed!</h1>
             <div class="result-details">
-                <p>Your Score: <span id="final-score">0</span> / <span id="total-questions">0</span></p>
-                <p>Percentage: <span id="percentage">0%</span></p>
+                <p><span data-i18n="result_score">Your Score</span>: <span id="final-score">0</span> / <span id="total-questions">0</span></p>
+                <p><span data-i18n="result_perc">Percentage</span>: <span id="percentage">0%</span></p>
                 <p id="performance-msg">Great job!</p>
             </div>
             <div class="result-actions">
-                <button id="restart-btn" class="primary-btn">Restart Quiz</button>
+                <button id="restart-btn" class="primary-btn" data-i18n="btn_restart">Restart Quiz</button>
                 <button id="share-btn" class="secondary-btn">
-                    <i class="fas fa-share-alt"></i> Send Result
+                    <i class="fas fa-share-alt"></i> <span data-i18n="btn_share">Send Result</span>
                 </button>
             </div>
         </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="page-section info-card">
+            <h1 data-i18n="nav_about">About Us</h1>
+            <div class="info-content">
+                <h2 data-i18n="about_subtitle">Welcome to AmitQuizX</h2>
+                <p data-i18n="about_p1">AmitQuizX is a premium educational platform designed to help students and knowledge seekers test their skills in General Knowledge, Science, History, and Geography. Our platform offers a unique interactive experience with thousands of questions.</p>
+                <h3 data-i18n="about_h3">How it works?</h3>
+                <p data-i18n="about_p2">Simply choose a category from the home screen, select a section (each containing 50 challenging questions), and start playing. You can track your score in real-time and see your performance percentage at the end.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="page-section info-card">
+            <h1 data-i18n="nav_contact">Contact Us</h1>
+            <div class="info-content">
+                <p data-i18n="contact_p">Have questions or feedback? We'd love to hear from you!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@amitquizx.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New Delhi, India</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help-section" class="page-section info-card">
+            <h1 data-i18n="nav_help">Help & Support</h1>
+            <div class="info-content">
+                <div class="faq-item">
+                    <h3 data-i18n="faq_q1">How to play?</h3>
+                    <p data-i18n="faq_a1">Click on any category card, then select a section. Answer the multiple-choice questions within the 15-second timer.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 data-i18n="faq_q2">Can I use it offline?</h3>
+                    <p data-i18n="faq_a2">Yes! Once loaded, AmitQuizX works offline as a PWA. You can also install it on your home screen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Section -->
+        <section id="privacy-section" class="page-section info-card">
+            <h1 data-i18n="nav_privacy">Privacy Policy</h1>
+            <div class="info-content">
+                <p data-i18n="privacy_p">At AmitQuizX, we respect your privacy. We do not collect any personal information. Your quiz scores are stored locally on your device and are never shared with our servers.</p>
+            </div>
+        </section>
     </main>
+
+    <div id="pwa-toast" class="toast">
+        <span data-i18n="pwa_msg">Install AmitQuizX for a better experience!</span>
+        <button id="pwa-install-btn" class="mini-btn">Install</button>
+    </div>
 
     <footer>
         <p>&copy; 2024 AmitQuizX. All rights reserved.</p>
