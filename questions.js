@@ -124,6 +124,126 @@ const quizData = {
                     explanation_en: "Alexander Graham Bell is credited with patenting the first practical telephone.",
                     explanation_hi: "अलेक्जेंडर ग्राहम बेल को पहले व्यावहारिक टेलीफोन के पेटेंट का श्रेय दिया जाता है।",
                     difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the largest animal in the world?",
+                    q_hi: "दुनिया का सबसे बड़ा जानवर कौन सा है?",
+                    options_en: ["Elephant", "Blue Whale", "Giraffe", "Shark"],
+                    options_hi: ["हाथी", "ब्लू व्हेल", "जिराफ", "शार्क"],
+                    answer: 1,
+                    hint_en: "It lives in the ocean.",
+                    hint_hi: "यह समुद्र में रहता है।",
+                    explanation_en: "The Blue Whale is the largest animal ever known to have lived on Earth.",
+                    explanation_hi: "ब्लू व्हेल पृथ्वी पर रहने वाला अब तक का सबसे बड़ा ज्ञात जानवर है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Who was the first person to step on the Moon?",
+                    q_hi: "चंद्रमा पर कदम रखने वाले पहले व्यक्ति कौन थे?",
+                    options_en: ["Yuri Gagarin", "Neil Armstrong", "Buzz Aldrin", "Rakesh Sharma"],
+                    options_hi: ["यूरी गागरिन", "नील आर्मस्ट्रांग", "बज़ एल्ड्रिन", "राकेश शर्मा"],
+                    answer: 1,
+                    hint_en: "He was an American astronaut in 1969.",
+                    hint_hi: "वे 1969 में एक अमेरिकी अंतरिक्ष यात्री थे।",
+                    explanation_en: "Neil Armstrong became the first human to step on the moon on July 20, 1969.",
+                    explanation_hi: "नील आर्मस्ट्रांग 20 जुलाई, 1969 को चंद्रमा पर कदम रखने वाले पहले मानव बने।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the fastest land animal?",
+                    q_hi: "सबसे तेज़ ज़मीनी जानवर कौन सा है?",
+                    options_en: ["Lion", "Tiger", "Cheetah", "Leopard"],
+                    options_hi: ["शेर", "बाघ", "चीता", "तेंदुआ"],
+                    answer: 2,
+                    hint_en: "It can reach speeds of up to 120 km/h.",
+                    hint_hi: "यह 120 किमी/घंटा तक की गति तक पहुँच सकता है।",
+                    explanation_en: "The Cheetah is the fastest land animal, capable of accelerating from 0 to 96 km/h in three seconds.",
+                    explanation_hi: "चीता सबसे तेज़ ज़मीनी जानवर है, जो तीन सेकंड में 0 से 96 किमी/घंटा की रफ़्तार पकड़ने में सक्षम है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which gas do humans need to breathe to survive?",
+                    q_hi: "जीवित रहने के लिए मनुष्यों को किस गैस में सांस लेने की आवश्यकता होती है?",
+                    options_en: ["Nitrogen", "Carbon Dioxide", "Oxygen", "Helium"],
+                    options_hi: ["नाइट्रोजन", "कार्बन डाइऑक्साइड", "ऑक्सीजन", "हीलियम"],
+                    answer: 2,
+                    hint_en: "It makes up about 21% of Earth's atmosphere.",
+                    hint_hi: "यह पृथ्वी के वायुमंडल का लगभग 21% हिस्सा बनाता है।",
+                    explanation_en: "Humans need oxygen for cellular respiration to produce energy.",
+                    explanation_hi: "ऊर्जा उत्पन्न करने के लिए मनुष्यों को कोशिकीय श्वसन के लिए ऑक्सीजन की आवश्यकता होती है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "How many colors are there in a rainbow?",
+                    q_hi: "इंद्रधनुष में कितने रंग होते हैं?",
+                    options_en: ["5", "6", "7", "8"],
+                    options_hi: ["5", "6", "7", "8"],
+                    answer: 2,
+                    hint_en: "Remember the acronym VIBGYOR.",
+                    hint_hi: "VIBGYOR संक्षिप्त नाम याद रखें।",
+                    explanation_en: "A rainbow consists of seven colors: Violet, Indigo, Blue, Green, Yellow, Orange, and Red.",
+                    explanation_hi: "इंद्रधनुष में सात रंग होते हैं: बैंगनी, जामुनी, नीला, हरा, पीला, नारंगी और लाल।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the largest country in the world by area?",
+                    q_hi: "क्षेत्रफल के आधार पर दुनिया का सबसे बड़ा देश कौन सा है?",
+                    options_en: ["China", "USA", "Canada", "Russia"],
+                    options_hi: ["चीन", "यूएसए", "कनाडा", "रूस"],
+                    answer: 3,
+                    hint_en: "It spans across both Europe and Asia.",
+                    hint_hi: "यह यूरोप और एशिया दोनों में फैला हुआ है।",
+                    explanation_en: "Russia is the largest country by area, covering more than one-eighth of Earth's inhabited land area.",
+                    explanation_hi: "रूस क्षेत्रफल के हिसाब से सबसे बड़ा देश है, जो पृथ्वी के बसे हुए भूमि क्षेत्र के आठवें हिस्से से अधिक को कवर करता है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who painted the Mona Lisa?",
+                    q_hi: "मोना लिसा किसने चित्रित की थी?",
+                    options_en: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+                    options_hi: ["विंसेंट वैन गॉग", "पाब्लो पिकासो", "लियोनार्डो द विंची", "माइकल एंजेलो"],
+                    answer: 2,
+                    hint_en: "He was a famous Italian polymath of the Renaissance.",
+                    hint_hi: "वे पुनर्जागरण के एक प्रसिद्ध इतालवी बहुश्रुत थे।",
+                    explanation_en: "Leonardo da Vinci painted the Mona Lisa in the early 16th century.",
+                    explanation_hi: "लियोनार्डो द विंची ने 16वीं शताब्दी की शुरुआत में मोना लिसा को चित्रित किया था।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which continent is known as the 'Dark Continent'?",
+                    q_hi: "किस महाद्वीप को 'अंधेरा महाद्वीप' के रूप में जाना जाता है?",
+                    options_en: ["Asia", "Africa", "South America", "Australia"],
+                    options_hi: ["एशिया", "अफ्रीका", "दक्षिण अमेरिका", "ऑस्ट्रेलिया"],
+                    answer: 1,
+                    hint_en: "It is the second largest continent.",
+                    hint_hi: "यह दूसरा सबसे बड़ा महाद्वीप है।",
+                    explanation_en: "Africa was called the Dark Continent because it remained unexplored for a long time.",
+                    explanation_hi: "अफ्रीका को अंधेरा महाद्वीप कहा जाता था क्योंकि यह लंबे समय तक अनछुआ रहा था।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who is known as the Father of the Nation in India?",
+                    q_hi: "भारत में राष्ट्रपिता के रूप में किसे जाना जाता है?",
+                    options_en: ["Jawaharlal Nehru", "Subhash Chandra Bose", "Mahatma Gandhi", "Bhagat Singh"],
+                    options_hi: ["जवाहरलाल नेहरू", "सुभाष चंद्र बोस", "महात्मा गांधी", "भगत सिंह"],
+                    answer: 2,
+                    hint_en: "His birthday is on October 2nd.",
+                    hint_hi: "उनका जन्मदिन 2 अक्टूबर को होता है।",
+                    explanation_en: "Mahatma Gandhi is called the Father of the Nation for his leadership in the independence movement.",
+                    explanation_hi: "स्वतंत्रता आंदोलन में उनके नेतृत्व के लिए महात्मा गांधी को राष्ट्रपिता कहा जाता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the smallest continent in the world?",
+                    q_hi: "दुनिया का सबसे छोटा महाद्वीप कौन सा है?",
+                    options_en: ["Europe", "Antarctica", "Australia", "South America"],
+                    options_hi: ["यूरोप", "अंटार्कटिका", "ऑस्ट्रेलिया", "दक्षिण अमेरिका"],
+                    answer: 2,
+                    hint_en: "It is also known as the Island Continent.",
+                    hint_hi: "इसे द्वीप महाद्वीप के रूप में भी जाना जाता है।",
+                    explanation_en: "Australia is the smallest continent and also a country.",
+                    explanation_hi: "ऑस्ट्रेलिया सबसे छोटा महाद्वीप है और एक देश भी है।",
+                    difficulty: "easy"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -252,6 +372,126 @@ const quizData = {
                     hint_hi: "यह ब्रह्मांड में सबसे प्रचुर मात्रा में पाया जाने वाला तत्व है।",
                     explanation_en: "Hydrogen is the first element on the periodic table with one proton.",
                     explanation_hi: "हाइड्रोजन आवर्त सारणी का पहला तत्व है जिसमें एक प्रोटॉन होता है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which organ in the human body pumps blood?",
+                    q_hi: "मानव शरीर का कौन सा अंग रक्त पंप करता है?",
+                    options_en: ["Lungs", "Brain", "Heart", "Kidney"],
+                    options_hi: ["फेफड़े", "मस्तिष्क", "हृदय", "गुर्दा"],
+                    answer: 2,
+                    hint_en: "It beats about 100,000 times a day.",
+                    hint_hi: "यह दिन में लगभग 100,000 बार धड़कता है।",
+                    explanation_en: "The heart is a muscular organ that pumps blood throughout the body.",
+                    explanation_hi: "हृदय एक पेशीय अंग है जो पूरे शरीर में रक्त पंप करता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "How many bones are there in an adult human body?",
+                    q_hi: "एक वयस्क मानव शरीर में कितनी हड्डियाँ होती हैं?",
+                    options_en: ["106", "206", "306", "406"],
+                    options_hi: ["106", "206", "306", "406"],
+                    answer: 1,
+                    hint_en: "It's more than 200.",
+                    hint_hi: "यह 200 से अधिक है।",
+                    explanation_en: "An adult human has 206 bones, while infants are born with around 270.",
+                    explanation_hi: "एक वयस्क मनुष्य में 206 हड्डियाँ होती हैं, जबकि शिशु लगभग 270 हड्डियों के साथ पैदा होते हैं।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "What is the nearest star to Earth?",
+                    q_hi: "पृथ्वी का निकटतम तारा कौन सा है?",
+                    options_en: ["Sirius", "Proxima Centauri", "Sun", "North Star"],
+                    options_hi: ["सीरियस", "प्रॉक्सिमा सेंटॉरी", "सूर्य", "ध्रुव तारा"],
+                    answer: 2,
+                    hint_en: "It provides light and heat during the day.",
+                    hint_hi: "यह दिन के दौरान प्रकाश और गर्मी प्रदान करता है।",
+                    explanation_en: "The Sun is the closest star to Earth and the center of our solar system.",
+                    explanation_hi: "सूर्य पृथ्वी का निकटतम तारा है और हमारे सौर मंडल का केंद्र है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the chemical symbol for Gold?",
+                    q_hi: "सोने का रासायनिक सूत्र क्या है?",
+                    options_en: ["Gd", "Go", "Ag", "Au"],
+                    options_hi: ["Gd", "Go", "Ag", "Au"],
+                    answer: 3,
+                    hint_en: "It comes from the Latin word 'Aurum'.",
+                    hint_hi: "यह लैटिन शब्द 'Aurum' से आया है।",
+                    explanation_en: "Au is the chemical symbol for Gold on the periodic table.",
+                    explanation_hi: "आवर्त सारणी पर सोने का रासायनिक सूत्र Au है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which planet has the most rings?",
+                    q_hi: "किस ग्रह में सबसे अधिक छल्ले हैं?",
+                    options_en: ["Jupiter", "Saturn", "Uranus", "Neptune"],
+                    options_hi: ["बृहस्पति", "शनि", "अरुण", "वरुण"],
+                    answer: 1,
+                    hint_en: "It is the second-largest planet in the solar system.",
+                    hint_hi: "यह सौरमंडल का दूसरा सबसे बड़ा ग्रह है।",
+                    explanation_en: "Saturn has the most extensive ring system of any planet.",
+                    explanation_hi: "शनि के पास किसी भी ग्रह का सबसे व्यापक वलय तंत्र है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which vitamin is obtained from sunlight?",
+                    q_hi: "सूर्य के प्रकाश से कौन सा विटामिन प्राप्त होता है?",
+                    options_en: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+                    options_hi: ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+                    answer: 3,
+                    hint_en: "It is essential for bone health.",
+                    hint_hi: "यह हड्डियों के स्वास्थ्य के लिए आवश्यक है।",
+                    explanation_en: "Your body produces vitamin D when your skin is exposed to sunlight.",
+                    explanation_hi: "जब आपकी त्वचा सूर्य के प्रकाश के संपर्क में आती है तो आपका शरीर विटामिन डी बनाता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the study of living things called?",
+                    q_hi: "जीवित चीजों के अध्ययन को क्या कहा जाता है?",
+                    options_en: ["Physics", "Chemistry", "Biology", "Geology"],
+                    options_hi: ["भौतिक विज्ञान", "रसायन विज्ञान", "जीव विज्ञान", "भूविज्ञान"],
+                    answer: 2,
+                    hint_en: "It comes from the Greek words for 'life' and 'study'.",
+                    hint_hi: "यह 'जीवन' और 'अध्ययन' के लिए ग्रीक शब्दों से आया है।",
+                    explanation_en: "Biology is the natural science that studies life and living organisms.",
+                    explanation_hi: "जीव विज्ञान वह प्राकृतिक विज्ञान है जो जीवन और जीवित जीवों का अध्ययन करता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which instrument is used to measure temperature?",
+                    q_hi: "तापमान मापने के लिए किस उपकरण का उपयोग किया जाता है?",
+                    options_en: ["Barometer", "Thermometer", "Hygrometer", "Speedometer"],
+                    options_hi: ["बैरोमीटर", "थर्मामीटर", "हाइग्रोमीटर", "स्पीडोमीटर"],
+                    answer: 1,
+                    hint_en: "It often contains mercury or alcohol.",
+                    hint_hi: "इसमें अक्सर पारा या अल्कोहल होता है।",
+                    explanation_en: "A thermometer is a device that measures temperature or a temperature gradient.",
+                    explanation_hi: "थर्मामीटर एक ऐसा उपकरण है जो तापमान या तापमान प्रवणता को मापता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the main gas found in the air we breathe?",
+                    q_hi: "हम जिस हवा में सांस लेते हैं उसमें पाई जाने वाली मुख्य गैस कौन सी है?",
+                    options_en: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
+                    options_hi: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "आर्गन"],
+                    answer: 2,
+                    hint_en: "It makes up about 78% of the atmosphere.",
+                    hint_hi: "यह वायुमंडल का लगभग 78% हिस्सा बनाता है।",
+                    explanation_en: "Nitrogen is the most abundant gas in Earth's atmosphere.",
+                    explanation_hi: "नाइट्रोजन पृथ्वी के वायुमंडल में सबसे प्रचुर मात्रा में पाई जाने वाली गैस है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who discovered gravity?",
+                    q_hi: "गुरुत्वाकर्षण की खोज किसने की थी?",
+                    options_en: ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+                    options_hi: ["अल्बर्ट आइंस्टीन", "आईजैक न्यूटन", "गैलीलियो गैलीली", "निकोला टेस्ला"],
+                    answer: 1,
+                    hint_en: "An apple supposedly fell on his head.",
+                    hint_hi: "माना जाता है कि एक सेब उनके सिर पर गिरा था।",
+                    explanation_en: "Sir Isaac Newton formulated the laws of motion and universal gravitation.",
+                    explanation_hi: "सर आइजैक न्यूटन ने गति के नियमों और सार्वभौमिक गुरुत्वाकर्षण को प्रतिपादित किया।",
                     difficulty: "medium"
                 }
             ],
@@ -382,6 +622,126 @@ const quizData = {
                     explanation_en: "Aristotle was hired by Philip II of Macedon to tutor Alexander.",
                     explanation_hi: "मैसेडोन के फिलिप द्वितीय ने सिकंदर को ट्यूशन देने के लिए अरस्तू को काम पर रखा था।",
                     difficulty: "hard"
+                },
+                {
+                    q_en: "Who was the first Prime Minister of India?",
+                    q_hi: "भारत के पहले प्रधानमंत्री कौन थे?",
+                    options_en: ["Mahatma Gandhi", "Jawaharlal Nehru", "Sardar Patel", "Lal Bahadur Shastri"],
+                    options_hi: ["महात्मा गांधी", "जवाहरलाल नेहरू", "सरदार पटेल", "लाल बहादुर शास्त्री"],
+                    answer: 1,
+                    hint_en: "He is also known as 'Chacha Nehru'.",
+                    hint_hi: "उन्हें 'चाचा नेहरू' के नाम से भी जाना जाता है।",
+                    explanation_en: "Jawaharlal Nehru was the first Prime Minister of independent India from 1947 to 1964.",
+                    explanation_hi: "जवाहरलाल नेहरू 1947 से 1964 तक स्वतंत्र भारत के पहले प्रधानमंत्री थे।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "The French Revolution began in which year?",
+                    q_hi: "फ्रांसीसी क्रांति किस वर्ष शुरू हुई थी?",
+                    options_en: ["1776", "1789", "1799", "1804"],
+                    options_hi: ["1776", "1789", "1799", "1804"],
+                    answer: 1,
+                    hint_en: "It's the same year the US Constitution was ratified.",
+                    hint_hi: "यह वही वर्ष है जब अमेरिकी संविधान की पुष्टि की गई थी।",
+                    explanation_en: "The French Revolution began in 1789 and led to the end of the monarchy in France.",
+                    explanation_hi: "फ्रांसीसी क्रांति 1789 में शुरू हुई और फ्रांस में राजशाही के अंत का कारण बनी।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "Who was the leader of the Nazi Party in Germany?",
+                    q_hi: "जर्मनी में नाजी पार्टी का नेता कौन था?",
+                    options_en: ["Benito Mussolini", "Adolf Hitler", "Joseph Stalin", "Winston Churchill"],
+                    options_hi: ["बेनिटो मुसोलिनी", "एडोल्फ हिटलर", "जोसेफ स्टालिन", "विंस्टन चर्चिल"],
+                    answer: 1,
+                    hint_en: "He wrote 'Mein Kampf'.",
+                    hint_hi: "उन्होंने 'मीन काम्फ' लिखी थी।",
+                    explanation_en: "Adolf Hitler was the leader of the Nazi Party and Chancellor of Germany from 1933 to 1945.",
+                    explanation_hi: "एडोल्फ हिटलर नाजी पार्टी के नेता और 1933 से 1945 तक जर्मनी के चांसलर थे।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which city was the first to be attacked by an atomic bomb?",
+                    q_hi: "परमाणु बम से हमला होने वाला पहला शहर कौन सा था?",
+                    options_en: ["Tokyo", "Hiroshima", "Nagasaki", "Berlin"],
+                    options_hi: ["टोक्यो", "हिरोशिमा", "नागासाकी", "बर्लिन"],
+                    answer: 1,
+                    hint_en: "The bomb was named 'Little Boy'.",
+                    hint_hi: "बम का नाम 'लिटिल बॉय' था।",
+                    explanation_en: "Hiroshima was bombed by the United States on August 6, 1945.",
+                    explanation_hi: "6 अगस्त, 1945 को संयुक्त राज्य अमेरिका द्वारा हिरोशिमा पर बमबारी की गई थी।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who was the first woman to fly solo across the Atlantic?",
+                    q_hi: "अटलांटिक के पार अकेले उड़ान भरने वाली पहली महिला कौन थीं?",
+                    options_en: ["Amelia Earhart", "Bessie Coleman", "Amy Johnson", "Valentina Tereshkova"],
+                    options_hi: ["अमेलिया इयरहार्ट", "बेसी कोलमैन", "एमी जॉनसन", "वेलेंटीना टेरेशकोवा"],
+                    answer: 0,
+                    hint_en: "She disappeared mysteriously during a flight.",
+                    hint_hi: "एक उड़ान के दौरान वह रहस्यमय तरीके से गायब हो गई थी।",
+                    explanation_en: "Amelia Earhart was the first female aviator to fly solo across the Atlantic Ocean.",
+                    explanation_hi: "अमेलिया इयरहार्ट अटलांटिक महासागर के पार अकेले उड़ान भरने वाली पहली महिला एविएटर थीं।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "The Great Wall of China was built to protect against which invaders?",
+                    q_hi: "चीन की महान दीवार किस हमलावरों से रक्षा के लिए बनाई गई थी?",
+                    options_en: ["Romans", "Mongols", "Greeks", "Persians"],
+                    options_hi: ["रोमन", "मंगोल", "यूनानी", "फारसी"],
+                    answer: 1,
+                    hint_en: "Nomadic tribes from the north.",
+                    hint_hi: "उत्तर से खानाबदोश जनजातियाँ।",
+                    explanation_en: "The wall was built across the historical northern borders of China to protect against nomadic groups.",
+                    explanation_hi: "खानाबदोश समूहों से रक्षा के लिए चीन की ऐतिहासिक उत्तरी सीमाओं पर दीवार बनाई गई थी।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who was the third President of the United States?",
+                    q_hi: "संयुक्त राज्य अमेरिका के तीसरे राष्ट्रपति कौन थे?",
+                    options_en: ["George Washington", "John Adams", "Thomas Jefferson", "James Madison"],
+                    options_hi: ["जॉर्ज वाशिंगटन", "जॉन एडम्स", "थॉमस जेफरसन", "जेम्स मेडिसन"],
+                    answer: 2,
+                    hint_en: "He was the principal author of the Declaration of Independence.",
+                    hint_hi: "वे स्वतंत्रता की घोषणा के मुख्य लेखक थे।",
+                    explanation_en: "Thomas Jefferson served as the third US president from 1801 to 1809.",
+                    explanation_hi: "थॉमस जेफरसन ने 1801 से 1809 तक तीसरे अमेरिकी राष्ट्रपति के रूप में कार्य किया।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "In which year did the Titanic sink?",
+                    q_hi: "टाइटेनिक किस वर्ष डूबा था?",
+                    options_en: ["1905", "1912", "1918", "1923"],
+                    options_hi: ["1905", "1912", "1918", "1923"],
+                    answer: 1,
+                    hint_en: "It was on its maiden voyage.",
+                    hint_hi: "यह अपनी पहली यात्रा पर था।",
+                    explanation_en: "The RMS Titanic sank in the North Atlantic Ocean on April 15, 1912.",
+                    explanation_hi: "आरएमएस टाइटेनिक 15 अप्रैल, 1912 को उत्तरी अटलांटिक महासागर में डूब गया था।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who was the Egyptian queen famous for her beauty?",
+                    q_hi: "अपनी सुंदरता के लिए प्रसिद्ध मिस्र की रानी कौन थीं?",
+                    options_en: ["Nefertiti", "Cleopatra", "Hatshepsut", "Isis"],
+                    options_hi: ["नेफ़र्टिटी", "क्लियोपेट्रा", "हत्शेपसट", "आइसिस"],
+                    answer: 1,
+                    hint_en: "She had relationships with Julius Caesar and Mark Antony.",
+                    hint_hi: "उनके जूलियस सीज़र और मार्क एंटनी के साथ संबंध थे।",
+                    explanation_en: "Cleopatra VII was the last active ruler of the Ptolemaic Kingdom of Egypt.",
+                    explanation_hi: "क्लियोपेट्रा VII मिस्र के टॉलेमिक साम्राज्य की अंतिम सक्रिय शासक थीं।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "The Magna Carta was signed in which year?",
+                    q_hi: "मैग्ना कार्टा पर किस वर्ष हस्ताक्षर किए गए थे?",
+                    options_en: ["1066", "1215", "1492", "1588"],
+                    options_hi: ["1066", "1215", "1492", "1588"],
+                    answer: 1,
+                    hint_en: "It happened in the 13th century.",
+                    hint_hi: "यह 13वीं शताब्दी में हुआ था।",
+                    explanation_en: "The Magna Carta was issued in June 1215 and was the first document to put into writing the principle that the king and his government were not above the law.",
+                    explanation_hi: "मैग्ना कार्टा जून 1215 में जारी किया गया था और यह लिखित रूप में इस सिद्धांत को रखने वाला पहला दस्तावेज़ था कि राजा और उसकी सरकार कानून से ऊपर नहीं थे।",
+                    difficulty: "hard"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -511,6 +871,126 @@ const quizData = {
                     explanation_en: "Indonesia has the highest number of active volcanoes in the world.",
                     explanation_hi: "इंडोनेशिया में दुनिया में सबसे अधिक सक्रिय ज्वालामुखी हैं।",
                     difficulty: "hard"
+                },
+                {
+                    q_en: "Which is the largest state in India by area?",
+                    q_hi: "क्षेत्रफल के आधार पर भारत का सबसे बड़ा राज्य कौन सा है?",
+                    options_en: ["Uttar Pradesh", "Maharashtra", "Rajasthan", "Madhya Pradesh"],
+                    options_hi: ["उत्तर प्रदेश", "महाराष्ट्र", "राजस्थान", "मध्य प्रदेश"],
+                    answer: 2,
+                    hint_en: "It is mostly covered by the Thar Desert.",
+                    hint_hi: "यह मुख्य रूप से थार मरुस्थल से ढका हुआ है।",
+                    explanation_en: "Rajasthan is the largest Indian state by area, located in the northwestern part of the country.",
+                    explanation_hi: "राजस्थान क्षेत्रफल के हिसाब से भारत का सबसे बड़ा राज्य है, जो देश के उत्तर-पश्चिमी भाग में स्थित है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which river flows through London?",
+                    q_hi: "लंदन से होकर कौन सी नदी बहती है?",
+                    options_en: ["Seine", "Thames", "Danube", "Rhine"],
+                    options_hi: ["सीन", "टेम्स", "डेन्यूब", "राइन"],
+                    answer: 1,
+                    hint_en: "It's a very famous river in England.",
+                    hint_hi: "यह इंग्लैंड की एक बहुत प्रसिद्ध नदी है।",
+                    explanation_en: "The River Thames flows through southern England, including London.",
+                    explanation_hi: "टेम्स नदी लंदन सहित दक्षिणी इंग्लैंड से होकर बहती है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which country has the largest population in the world?",
+                    q_hi: "दुनिया में सबसे अधिक जनसंख्या वाला देश कौन सा है?",
+                    options_en: ["China", "India", "USA", "Indonesia"],
+                    options_hi: ["चीन", "भारत", "यूएसए", "इंडोनेशिया"],
+                    answer: 1,
+                    hint_en: "As of 2023, it has surpassed China.",
+                    hint_hi: "2023 तक, इसने चीन को पीछे छोड़ दिया है।",
+                    explanation_en: "India is currently the most populous country in the world.",
+                    explanation_hi: "भारत वर्तमान में दुनिया का सबसे अधिक जनसंख्या वाला देश है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the capital of Italy?",
+                    q_hi: "इटली की राजधानी क्या है?",
+                    options_en: ["Venice", "Milan", "Rome", "Florence"],
+                    options_hi: ["वेनिस", "मिलान", "रोम", "फ्लोरेंस"],
+                    answer: 2,
+                    hint_en: "It is often called the 'Eternal City'.",
+                    hint_hi: "इसे अक्सर 'शाश्वत शहर' कहा जाता है।",
+                    explanation_en: "Rome is the capital city of Italy and also of the Lazio region.",
+                    explanation_hi: "रोम इटली की और लाज़ियो क्षेत्र की भी राजधानी है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which desert is located in India?",
+                    q_hi: "भारत में कौन सा रेगिस्तान स्थित है?",
+                    options_en: ["Sahara", "Gobi", "Thar", "Atacama"],
+                    options_hi: ["सहारा", "गोबी", "थार", "अटाकामा"],
+                    answer: 2,
+                    hint_en: "It is also known as the Great Indian Desert.",
+                    hint_hi: "इसे ग्रेट इंडियन डेजर्ट के नाम से भी जाना जाता है।",
+                    explanation_en: "The Thar Desert forms a natural boundary between India and Pakistan.",
+                    explanation_hi: "थार मरुस्थल भारत और पाकिस्तान के बीच एक प्राकृतिक सीमा बनाता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "How many states are there in India?",
+                    q_hi: "भारत में कितने राज्य हैं?",
+                    options_en: ["27", "28", "29", "30"],
+                    options_hi: ["27", "28", "29", "30"],
+                    answer: 1,
+                    hint_en: "The number changed after Jammu and Kashmir became a Union Territory.",
+                    hint_hi: "जम्मू और कश्मीर के केंद्र शासित प्रदेश बनने के बाद संख्या बदल गई।",
+                    explanation_en: "India currently has 28 states and 8 Union Territories.",
+                    explanation_hi: "भारत में वर्तमान में 28 राज्य और 8 केंद्र शासित प्रदेश हैं।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the deepest point in the world's oceans?",
+                    q_hi: "दुनिया के महासागरों में सबसे गहरा बिंदु कौन सा है?",
+                    options_en: ["Java Trench", "Mariana Trench", "Puerto Rico Trench", "Tonga Trench"],
+                    options_hi: ["जावा ट्रेंच", "मारियाना ट्रेंच", "प्यूर्टो रिको ट्रेंच", "टोंगा ट्रेंच"],
+                    answer: 1,
+                    hint_en: "It is located in the Pacific Ocean.",
+                    hint_hi: "यह प्रशांत महासागर में स्थित है।",
+                    explanation_en: "The Mariana Trench is the deepest part of the world's oceans.",
+                    explanation_hi: "मारियाना ट्रेंच दुनिया के महासागरों का सबसे गहरा हिस्सा है।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "Which country is known as the 'Land of a Thousand Lakes'?",
+                    q_hi: "किस देश को 'हजारों झीलों की भूमि' के रूप में जाना जाता है?",
+                    options_en: ["Norway", "Sweden", "Finland", "Canada"],
+                    options_hi: ["नार्वे", "स्वीडन", "फिनलैंड", "कनाडा"],
+                    answer: 2,
+                    hint_en: "It's a Nordic country in Northern Europe.",
+                    hint_hi: "यह उत्तरी यूरोप का एक नॉर्डिक देश है।",
+                    explanation_en: "Finland has about 188,000 lakes.",
+                    explanation_hi: "फिनलैंड में लगभग 188,000 झीलें हैं।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "What is the capital of the United States?",
+                    q_hi: "संयुक्त राज्य अमेरिका की राजधानी क्या है?",
+                    options_en: ["New York City", "Los Angeles", "Chicago", "Washington D.C."],
+                    options_hi: ["न्यूयॉर्क सिटी", "लॉस एंजिल्स", "शिकागो", "वाशिंगटन डी.सी."],
+                    answer: 3,
+                    hint_en: "It is named after the first US President.",
+                    hint_hi: "इसका नाम पहले अमेरिकी राष्ट्रपति के नाम पर रखा गया है।",
+                    explanation_en: "Washington, D.C. is the capital city of the United States of America.",
+                    explanation_hi: "वाशिंगटन, डी.सी. संयुक्त राज्य अमेरिका की राजधानी है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the largest lake in the world?",
+                    q_hi: "दुनिया की सबसे बड़ी झील कौन सी है?",
+                    options_en: ["Lake Superior", "Caspian Sea", "Lake Victoria", "Lake Baikal"],
+                    options_hi: ["सुपीरियर झील", "कैस्पियन सागर", "विक्टोरिया झील", "बैकाल झील"],
+                    answer: 1,
+                    hint_en: "Despite its name, it is a lake.",
+                    hint_hi: "इसके नाम के बावजूद, यह एक झील है।",
+                    explanation_en: "The Caspian Sea is the world's largest inland body of water.",
+                    explanation_hi: "कैस्पियन सागर दुनिया का सबसे बड़ा अंतर्देशीय जल निकाय है।",
+                    difficulty: "hard"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -518,28 +998,3 @@ const quizData = {
     }
 };
 
-function populateMockQuestions() {
-    const difficulties = ["easy", "medium", "hard"];
-    for (let cat in quizData) {
-        for (let sec in quizData[cat].sections) {
-            const existingCount = quizData[cat].sections[sec].length;
-            for (let i = existingCount + 1; i <= 50; i++) {
-                const diff = difficulties[Math.floor(Math.random() * 3)];
-                quizData[cat].sections[sec].push({
-                    q_en: `${quizData[cat].title_en} Question ${i} in Section ${sec}`,
-                    q_hi: `${quizData[cat].title_hi} प्रश्न ${i} अनुभाग ${sec} में`,
-                    options_en: ["Option A", "Option B", "Option C", "Option D"],
-                    options_hi: ["विकल्प ए", "विकल्प बी", "विकल्प सी", "विकल्प डी"],
-                    answer: Math.floor(Math.random() * 4),
-                    hint_en: `Hint for ${quizData[cat].title_en} Q${i}`,
-                    hint_hi: `${quizData[cat].title_hi} प्रश्न ${i} के लिए संकेत`,
-                    explanation_en: `Explanation for ${quizData[cat].title_en} Question ${i}. This is a detailed fact about the correct answer.`,
-                    explanation_hi: `${quizData[cat].title_hi} प्रश्न ${i} का विवरण। यह सही उत्तर के बारे में एक विस्तृत तथ्य है।`,
-                    difficulty: diff
-                });
-            }
-        }
-    }
-}
-
-populateMockQuestions();
