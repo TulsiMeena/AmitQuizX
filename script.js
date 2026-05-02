@@ -107,7 +107,7 @@ const themeDropdown = document.getElementById('theme-dropdown');
 const voiceToggle = document.getElementById('voice-toggle');
 
 const categoryCards = document.querySelectorAll('.category-card');
-const sectionGrid = document.getElementById('section-grid');
+const roadmapPath = document.getElementById('roadmap-path');
 const categoryTitleDisplay = document.getElementById('category-title-display');
 const backBtn = document.querySelector('.back-btn');
 const diffBtns = document.querySelectorAll('.diff-btn');
@@ -301,15 +301,40 @@ function initAvatarSelector() {
 function showSectionSelection() {
     const data = quizData[selectedCategory];
     categoryTitleDisplay.textContent = currentLanguage === 'en' ? data.title_en : data.title_hi;
-    sectionGrid.innerHTML = '';
+    roadmapPath.innerHTML = '';
+
+    // Get progress from localStorage
+    const scores = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]');
+    const completedSections = scores
+        .filter(s => s.category === selectedCategory)
+        .map(s => parseInt(s.section)); // We should save section in score
+
+    let lastCompleted = Math.max(0, ...completedSections);
+
     for (let i = 1; i <= 6; i++) {
-        const card = document.createElement('div');
-        card.classList.add('section-card');
+        const node = document.createElement('div');
+        node.classList.add('roadmap-node');
+
         const qCount = selectedDifficulty === 'all' ? data.sections[i].length : data.sections[i].filter(q => q.difficulty === selectedDifficulty).length;
-        card.innerHTML = `<span class="sec-number">${i}</span><p>${translations[currentLanguage].section_label} ${i}</p><small>${qCount} Q</small>`;
-        if (qCount > 0) card.addEventListener('click', () => startQuiz(i));
-        else { card.style.opacity = '0.5'; card.style.cursor = 'not-allowed'; }
-        sectionGrid.appendChild(card);
+
+        if (completedSections.includes(i)) {
+            node.classList.add('completed');
+            node.innerHTML = `<i class="fas fa-check"></i>`;
+        } else if (i === lastCompleted + 1 || i === 1) {
+            node.classList.add('active');
+            node.innerHTML = `<span class="node-num">${i}</span>`;
+        } else {
+            node.classList.add('locked');
+            node.innerHTML = `<i class="fas fa-lock"></i>`;
+        }
+
+        node.innerHTML += `<span class="node-label">${translations[currentLanguage].section_label} ${i} (${qCount} Q)</span>`;
+
+        if (!node.classList.contains('locked') && qCount > 0) {
+            node.addEventListener('click', () => startQuiz(i));
+        }
+
+        roadmapPath.appendChild(node);
     }
     showPage('section-select-section');
 }
@@ -443,7 +468,14 @@ function buildReview() {
 
 function saveScore(s, t) {
     const scores = JSON.parse(localStorage.getItem('amitquizx_scores') || '[]');
-    scores.push({ name: userNameInput.value || 'Anonymous', score: s, total: t, date: new Date().toLocaleDateString(), category: selectedCategory });
+    scores.push({
+        name: userNameInput.value || 'Anonymous',
+        score: s,
+        total: t,
+        date: new Date().toLocaleDateString(),
+        category: selectedCategory,
+        section: selectedSection
+    });
     localStorage.setItem('amitquizx_scores', JSON.stringify(scores.slice(-50)));
 }
 
