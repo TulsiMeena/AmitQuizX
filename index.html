@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmitQuizX - Modern GK Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <header>
+        <div class="logo">AmitQuizX</div>
+        <button id="theme-toggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home-section" class="card active">
+            <h1>Test Your General Knowledge</h1>
+            <p>Play daily quizzes and improve your knowledge</p>
+
+            <div class="category-selection">
+                <h3>Select Category</h3>
+                <div class="categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="gk">GK</button>
+                    <button class="category-btn" data-category="science">Science</button>
+                    <button class="category-btn" data-category="history">History</button>
+                    <button class="category-btn" data-category="geography">Geography</button>
+                </div>
+            </div>
+
+            <button id="start-btn" class="primary-btn">Start Quiz</button>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="card">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="question-count">Question 1/10</span>
+                    <span id="category-label">Category: GK</span>
+                </div>
+                <div class="timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer-text">15s</span>
+                </div>
+            </div>
+
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text">Question goes here?</h2>
+                <div id="options-container" class="options-container">
+                    <!-- Options will be injected by JS -->
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <div class="score-display">
+                    Score: <span id="current-score">0</span>
+                </div>
+                <button id="next-btn" class="primary-btn" disabled>Next Question</button>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section" class="card">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h1>Quiz Completed!</h1>
+            <div class="result-details">
+                <p>Your Score: <span id="final-score">0</span> / <span id="total-questions">0</span></p>
+                <p>Percentage: <span id="percentage">0%</span></p>
+                <p id="performance-msg">Great job!</p>
+            </div>
+            <button id="restart-btn" class="primary-btn">Restart Quiz</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 AmitQuizX. All rights reserved.</p>
+    </footer>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
