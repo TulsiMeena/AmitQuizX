@@ -124,6 +124,486 @@ const quizData = {
                     explanation_en: "Alexander Graham Bell is credited with patenting the first practical telephone.",
                     explanation_hi: "अलेक्जेंडर ग्राहम बेल को पहले व्यावहारिक टेलीफोन के पेटेंट का श्रेय दिया जाता है।",
                     difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the highest mountain peak in India?",
+                    q_hi: "भारत की सबसे ऊँची पर्वत चोटी कौन सी है?",
+                    options_en: ["Mount Everest", "Kanchenjunga", "Nanda Devi", "K2"],
+                    options_hi: ["माउंट एवरेस्ट", "कंचनजंगा", "नंदा देवी", "के2"],
+                    answer: 1,
+                    hint_en: "It is located in Sikkim.",
+                    hint_hi: "यह सिक्किम में स्थित है।",
+                    explanation_en: "Kanchenjunga is the highest peak in India and the third highest in the world.",
+                    explanation_hi: "कंचनजंगा भारत की सबसे ऊँची और दुनिया की तीसरी सबसे ऊँची चोटी है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who was the first woman President of India?",
+                    q_hi: "भारत की पहली महिला राष्ट्रपति कौन थीं?",
+                    options_en: ["Pratibha Patil", "Indira Gandhi", "Sarojini Naidu", "Draupadi Murmu"],
+                    options_hi: ["प्रतिभा पाटिल", "इंदिरा गांधी", "सरोजिनी नायडू", "द्रौपदी मुर्मू"],
+                    answer: 0,
+                    hint_en: "She served from 2007 to 2012.",
+                    hint_hi: "उन्होंने 2007 से 2012 तक सेवा की।",
+                    explanation_en: "Pratibha Patil was the 12th President of India and the first woman to hold the office.",
+                    explanation_hi: "प्रतिभा पाटिल भारत की 12वीं राष्ट्रपति थीं और इस पद पर बैठने वाली पहली महिला थीं।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the largest state in India by area?",
+                    q_hi: "क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य कौन सा है?",
+                    options_en: ["Madhya Pradesh", "Maharashtra", "Rajasthan", "Uttar Pradesh"],
+                    options_hi: ["मध्य प्रदेश", "महाराष्ट्र", "राजस्थान", "उत्तर प्रदेश"],
+                    answer: 2,
+                    hint_en: "It is known for the Thar Desert.",
+                    hint_hi: "यह थार मरुस्थल के लिए जाना जाता है।",
+                    explanation_en: "Rajasthan is the largest Indian state by area, covering about 10.4% of India.",
+                    explanation_hi: "राजस्थान क्षेत्रफल के हिसाब से सबसे बड़ा भारतीय राज्य है, जो भारत के लगभग 10.4% हिस्से को कवर करता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the smallest state in India by area?",
+                    q_hi: "क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन सा है?",
+                    options_en: ["Sikkim", "Goa", "Tripura", "Manipur"],
+                    options_hi: ["सिक्किम", "गोवा", "त्रिपुरा", "मणिपुर"],
+                    answer: 1,
+                    hint_en: "Famous for its beaches.",
+                    hint_hi: "अपने समुद्र तटों के लिए प्रसिद्ध।",
+                    explanation_en: "Goa is India's smallest state by area and has the highest GDP per capita.",
+                    explanation_hi: "गोवा क्षेत्रफल के हिसाब से भारत का सबसे छोटा राज्य है और इसकी प्रति व्यक्ति जीडीपी सबसे अधिक है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which city is known as the 'Silicon Valley of India'?",
+                    q_hi: "किस शहर को 'भारत की सिलिकॉन वैली' के रूप में जाना जाता है?",
+                    options_en: ["Hyderabad", "Pune", "Bengaluru", "Chennai"],
+                    options_hi: ["हैदराबाद", "पुणे", "बेंगलुरु", "चेन्नई"],
+                    answer: 2,
+                    hint_en: "It is the capital of Karnataka.",
+                    hint_hi: "यह कर्नाटक की राजधानी है।",
+                    explanation_en: "Bengaluru is called the Silicon Valley of India because of its role as the nation's leading IT exporter.",
+                    explanation_hi: "बेंगलुरु को राष्ट्र के प्रमुख आईटी निर्यातक के रूप में इसकी भूमिका के कारण भारत की सिलिकॉन वैली कहा जाता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the national bird of India?",
+                    q_hi: "भारत का राष्ट्रीय पक्षी क्या है?",
+                    options_en: ["Sparrow", "Eagle", "Peacock", "Parrot"],
+                    options_hi: ["गौरैया", "बाज", "मोर", "तोता"],
+                    answer: 2,
+                    hint_en: "It has colorful feathers and dances in the rain.",
+                    hint_hi: "इसके रंगीन पंख होते हैं और यह बारिश में नाचता है।",
+                    explanation_en: "The Indian Peacock was declared the national bird of India in 1963.",
+                    explanation_hi: "भारतीय मोर को 1963 में भारत का राष्ट्रीय पक्षी घोषित किया गया था।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the national animal of India?",
+                    q_hi: "भारत का राष्ट्रीय पशु क्या है?",
+                    options_en: ["Lion", "Tiger", "Elephant", "Leopard"],
+                    options_hi: ["शेर", "बाघ", "हाथी", "तेंदुआ"],
+                    answer: 1,
+                    hint_en: "Known for its stripes.",
+                    hint_hi: "अपनी धारियों के लिए जाना जाता है।",
+                    explanation_en: "The Bengal Tiger is the national animal of India.",
+                    explanation_hi: "बंगाल टाइगर भारत का राष्ट्रीय पशु है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the national flower of India?",
+                    q_hi: "भारत का राष्ट्रीय फूल क्या है?",
+                    options_en: ["Rose", "Lotus", "Sunflower", "Marigold"],
+                    options_hi: ["गुलाब", "कमल", "सूरजमुखी", "गेंदा"],
+                    answer: 1,
+                    hint_en: "It grows in muddy water.",
+                    hint_hi: "यह कीचड़ भरे पानी में उगता है।",
+                    explanation_en: "The Lotus is the national flower of India, symbolizing purity and auspiciousness.",
+                    explanation_hi: "कमल भारत का राष्ट्रीय फूल है, जो पवित्रता और शुभता का प्रतीक है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the national fruit of India?",
+                    q_hi: "भारत का राष्ट्रीय फल क्या है?",
+                    options_en: ["Apple", "Banana", "Mango", "Orange"],
+                    options_hi: ["सेब", "केला", "आम", "संतरा"],
+                    answer: 2,
+                    hint_en: "Known as the King of Fruits.",
+                    hint_hi: "फलों के राजा के रूप में जाना जाता है।",
+                    explanation_en: "Mango is the national fruit of India.",
+                    explanation_hi: "आम भारत का राष्ट्रीय फल है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the national tree of India?",
+                    q_hi: "भारत का राष्ट्रीय वृक्ष क्या है?",
+                    options_en: ["Neem", "Peepal", "Banyan", "Mango Tree"],
+                    options_hi: ["नीम", "पीपल", "बरगद", "आम का पेड़"],
+                    answer: 2,
+                    hint_en: "It has hanging roots.",
+                    hint_hi: "इसकी लटकती हुई जड़ें होती हैं।",
+                    explanation_en: "The Banyan tree is the national tree of India.",
+                    explanation_hi: "बरगद का पेड़ भारत का राष्ट्रीय वृक्ष है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Who was the first Indian to win a Nobel Prize?",
+                    q_hi: "नोबेल पुरस्कार जीतने वाले पहले भारतीय कौन थे?",
+                    options_en: ["C.V. Raman", "Mother Teresa", "Rabindranath Tagore", "Hargobind Khorana"],
+                    options_hi: ["सी.वी. रमन", "मदर टेरेसा", "रवींद्रनाथ टैगोर", "हरगोविंद खुराना"],
+                    answer: 2,
+                    hint_en: "He won it for Literature in 1913.",
+                    hint_hi: "उन्होंने 1913 में साहित्य के लिए इसे जीता था।",
+                    explanation_en: "Rabindranath Tagore won the Nobel Prize for Literature for his collection 'Gitanjali'.",
+                    explanation_hi: "रवींद्रनाथ टैगोर ने अपने संग्रह 'गीतांजलि' के लिए साहित्य का नोबेल पुरस्कार जीता।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who is known as the 'Missile Man of India'?",
+                    q_hi: "भारत के 'मिसाइल मैन' के रूप में किसे जाना जाता है?",
+                    options_en: ["Vikram Sarabhai", "Homi J. Bhabha", "A.P.J. Abdul Kalam", "Satish Dhawan"],
+                    options_hi: ["विक्रम साराभाई", "होमी जे. भाभा", "ए.पी.जे. अब्दुल कलाम", "सतीश धवन"],
+                    answer: 2,
+                    hint_en: "He was also the 11th President of India.",
+                    hint_hi: "वे भारत के 11वें राष्ट्रपति भी थे।",
+                    explanation_en: "Dr. A.P.J. Abdul Kalam is called the Missile Man for his work on ballistic missile technology.",
+                    explanation_hi: "डॉ. ए.पी.जे. अब्दुल कलाम को बैलिस्टिक मिसाइल तकनीक पर उनके काम के लिए मिसाइल मैन कहा जाता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which state is known as the 'Spices Garden of India'?",
+                    q_hi: "किस राज्य को 'भारत का मसालों का बगीचा' कहा जाता है?",
+                    options_en: ["Karnataka", "Kerala", "Tamil Nadu", "Andhra Pradesh"],
+                    options_hi: ["कर्नाटक", "केरल", "तमिलनाडु", "आंध्र प्रदेश"],
+                    answer: 1,
+                    hint_en: "It is located on the Malabar Coast.",
+                    hint_hi: "यह मालाबार तट पर स्थित है।",
+                    explanation_en: "Kerala is known as the Spice Garden of India for its variety of spices.",
+                    explanation_hi: "केरल अपनी विभिन्न प्रकार के मसालों के लिए भारत के मसालों के बगीचे के रूप में जाना जाता है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the largest freshwater lake in India?",
+                    q_hi: "भारत की सबसे बड़ी मीठे पानी की झील कौन सी है?",
+                    options_en: ["Chilika Lake", "Wular Lake", "Dal Lake", "Pulicat Lake"],
+                    options_hi: ["चिल्का झील", "वुलर झील", "डल झील", "पुलिकट झील"],
+                    answer: 1,
+                    hint_en: "It is located in Jammu and Kashmir.",
+                    hint_hi: "यह जम्मू और कश्मीर में स्थित है।",
+                    explanation_en: "Wular Lake in Jammu and Kashmir is one of the largest freshwater lakes in Asia.",
+                    explanation_hi: "जम्मू-कश्मीर की वुलर झील एशिया की सबसे बड़ी मीठे पानी की झीलों में से एक है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the highest dam in India?",
+                    q_hi: "भारत का सबसे ऊँचा बाँध कौन सा है?",
+                    options_en: ["Bhakra Dam", "Tehri Dam", "Hirakud Dam", "Sardar Sarovar Dam"],
+                    options_hi: ["भाखड़ा बाँध", "टिहरी बाँध", "हीराकुंड बाँध", "सरदार सरोवर बाँध"],
+                    answer: 1,
+                    hint_en: "It is built on the Bhagirathi River.",
+                    hint_hi: "यह भागीरथी नदी पर बना है।",
+                    explanation_en: "The Tehri Dam in Uttarakhand is the highest dam in India.",
+                    explanation_hi: "उत्तराखंड में टिहरी बाँध भारत का सबसे ऊँचा बाँध है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the longest dam in India?",
+                    q_hi: "भारत का सबसे लंबा बाँध कौन सा है?",
+                    options_en: ["Bhakra Dam", "Tehri Dam", "Hirakud Dam", "Nagarjuna Sagar Dam"],
+                    options_hi: ["भाखड़ा बाँध", "टिहरी बाँध", "हीराकुंड बाँध", "नागार्जुन सागर बाँध"],
+                    answer: 2,
+                    hint_en: "It is built on the Mahanadi River in Odisha.",
+                    hint_hi: "यह ओडिशा में महानदी पर बना है।",
+                    explanation_en: "Hirakud Dam is the longest earthen dam in the world and the longest dam in India.",
+                    explanation_hi: "हीराकुंड बाँध दुनिया का सबसे लंबा मिट्टी का बाँध और भारत का सबसे लंबा बाँध है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who was the first Indian woman to go into space?",
+                    q_hi: "अंतरिक्ष में जाने वाली पहली भारतीय महिला कौन थीं?",
+                    options_en: ["Sunita Williams", "Kalpana Chawla", "Anshula Rao", "Santhosh Yadav"],
+                    options_hi: ["सुनीता विलियम्स", "कल्पना चावला", "अंशुला राव", "संतोष यादव"],
+                    answer: 1,
+                    hint_en: "She was born in Karnal, Haryana.",
+                    hint_hi: "उनका जन्म करनाल, हरियाणा में हुआ था।",
+                    explanation_en: "Kalpana Chawla was the first Indian-born woman to fly in space in 1997.",
+                    explanation_hi: "कल्पना चावला 1997 में अंतरिक्ष में उड़ान भरने वाली पहली भारतीय मूल की महिला थीं।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Who was the first Indian woman to climb Mount Everest?",
+                    q_hi: "माउंट एवरेस्ट पर चढ़ने वाली पहली भारतीय महिला कौन थीं?",
+                    options_en: ["Santosh Yadav", "Arunima Sinha", "Bachendri Pal", "Premlata Agarwal"],
+                    options_hi: ["संतोष यादव", "अरुणिमा सिन्हा", "बछेंद्री पाल", "प्रेमलता अग्रवाल"],
+                    answer: 2,
+                    hint_en: "She achieved this feat in 1984.",
+                    hint_hi: "उन्होंने यह उपलब्धि 1984 में हासिल की थी।",
+                    explanation_en: "Bachendri Pal became the first Indian woman to reach the summit of Mt. Everest.",
+                    explanation_hi: "बछेंद्री पाल माउंट एवरेस्ट के शिखर पर पहुँचने वाली पहली भारतीय महिला बनीं।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Who was the first Governor-General of India?",
+                    q_hi: "भारत के पहले गवर्नर-जनरल कौन थे?",
+                    options_en: ["Lord Canning", "Lord William Bentinck", "Lord Mountbatten", "Warren Hastings"],
+                    options_hi: ["लॉर्ड कैनिंग", "लॉर्ड विलियम बेंटिक", "लॉर्ड माउंटबेटन", "वॉरेन हेस्टिंग्स"],
+                    answer: 1,
+                    hint_en: "He introduced English education in India.",
+                    hint_hi: "उन्होंने भारत में अंग्रेजी शिक्षा की शुरुआत की थी।",
+                    explanation_en: "Lord William Bentinck was the first Governor-General of India (1833-1835).",
+                    explanation_hi: "लॉर्ड विलियम बेंटिक भारत के पहले गवर्नर-जनरल (1833-1835) थे।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "Who founded the Brahmo Samaj?",
+                    q_hi: "ब्रह्म समाज की स्थापना किसने की थी?",
+                    options_en: ["Swami Vivekananda", "Dayanand Saraswati", "Raja Ram Mohan Roy", "Ishwar Chandra Vidyasagar"],
+                    options_hi: ["स्वामी विवेकानंद", "दयानंद सरस्वती", "राजा राम मोहन राय", "ईश्वर चंद्र विद्यासागर"],
+                    answer: 2,
+                    hint_en: "He is known as the 'Father of Modern India'.",
+                    hint_hi: "उन्हें 'आधुनिक भारत के पिता' के रूप में जाना जाता है।",
+                    explanation_en: "Raja Ram Mohan Roy founded the Brahmo Samaj in 1828 in Calcutta.",
+                    explanation_hi: "राजा राम मोहन राय ने 1828 में कलकत्ता में ब्रह्म समाज की स्थापना की थी।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the oldest mountain range in India?",
+                    q_hi: "भारत की सबसे पुरानी पर्वत श्रृंखला कौन सी है?",
+                    options_en: ["Himalayas", "Vindhyas", "Aravalli Range", "Satpura Range"],
+                    options_hi: ["हिमालय", "विंध्य", "अरावली पर्वतमाला", "सतपुड़ा पर्वतमाला"],
+                    answer: 2,
+                    hint_en: "It runs through Rajasthan and Haryana.",
+                    hint_hi: "यह राजस्थान और हरियाणा से होकर गुजरती है।",
+                    explanation_en: "The Aravalli Range is the oldest fold mountain system in India.",
+                    explanation_hi: "अरावली पर्वतमाला भारत की सबसे पुरानी वलित पर्वत प्रणाली है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "What is the total number of states in India currently?",
+                    q_hi: "वर्तमान में भारत में राज्यों की कुल संख्या कितनी है?",
+                    options_en: ["27", "28", "29", "30"],
+                    options_hi: ["27", "28", "29", "30"],
+                    answer: 1,
+                    hint_en: "Jammu and Kashmir is now a Union Territory.",
+                    hint_hi: "जम्मू और कश्मीर अब एक केंद्र शासित प्रदेश है।",
+                    explanation_en: "As of 2024, India has 28 states and 8 Union Territories.",
+                    explanation_hi: "2024 तक, भारत में 28 राज्य और 8 केंद्र शासित प्रदेश हैं।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "How many Union Territories are there in India?",
+                    q_hi: "भारत में कितने केंद्र शासित प्रदेश हैं?",
+                    options_en: ["7", "8", "9", "6"],
+                    options_hi: ["7", "8", "9", "6"],
+                    answer: 1,
+                    hint_en: "Daman & Diu and Dadra & Nagar Haveli were merged.",
+                    hint_hi: "दमन और दीव और दादरा और नगर हवेली का विलय कर दिया गया था।",
+                    explanation_en: "India has 8 Union Territories as of 2024.",
+                    explanation_hi: "2024 तक भारत में 8 केंद्र शासित प्रदेश हैं।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which river is known as the 'Dakshin Ganga'?",
+                    q_hi: "किस नदी को 'दक्षिण गंगा' के रूप में जाना जाता है?",
+                    options_en: ["Krishna", "Cauvery", "Godavari", "Mahanadi"],
+                    options_hi: ["कृष्णा", "कावेरी", "गोदावरी", "महानदी"],
+                    answer: 2,
+                    hint_en: "It is the second longest river in India.",
+                    hint_hi: "यह भारत की दूसरी सबसे लंबी नदी है।",
+                    explanation_en: "The Godavari is often referred to as Dakshin Ganga due to its size and length.",
+                    explanation_hi: "गोदावरी को उसके आकार और लंबाई के कारण अक्सर दक्षिण गंगा कहा जाता है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Where is the largest museum in India located?",
+                    q_hi: "भारत का सबसे बड़ा संग्रहालय कहाँ स्थित है?",
+                    options_en: ["Delhi", "Mumbai", "Kolkata", "Chennai"],
+                    options_hi: ["दिल्ली", "मुंबई", "कोलकाता", "चेन्नई"],
+                    answer: 2,
+                    hint_en: "It was founded in 1814.",
+                    hint_hi: "इसकी स्थापना 1814 में हुई थी।",
+                    explanation_en: "The Indian Museum in Kolkata is the largest and oldest museum in India.",
+                    explanation_hi: "कोलकाता में भारतीय संग्रहालय भारत का सबसे बड़ा और सबसे पुराना संग्रहालय है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "The Sun Temple is located in which state?",
+                    q_hi: "सूर्य मंदिर किस राज्य में स्थित है?",
+                    options_en: ["Gujarat", "Odisha", "Tamil Nadu", "Rajasthan"],
+                    options_hi: ["गुजरात", "ओडिशा", "तमिलनाडु", "राजस्थान"],
+                    answer: 1,
+                    hint_en: "It is in Konark.",
+                    hint_hi: "यह कोणार्क में है।",
+                    explanation_en: "The Konark Sun Temple is a 13th-century Sun Temple in Odisha.",
+                    explanation_hi: "कोणार्क सूर्य मंदिर ओडिशा में 13वीं शताब्दी का सूर्य मंदिर है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Gateway of India is located in which city?",
+                    q_hi: "गेटवे ऑफ इंडिया किस शहर में स्थित है?",
+                    options_en: ["New Delhi", "Mumbai", "Kolkata", "Hyderabad"],
+                    options_hi: ["नई दिल्ली", "मुंबई", "कोलकाता", "हैदराबाद"],
+                    answer: 1,
+                    hint_en: "It faces the Arabian Sea.",
+                    hint_hi: "यह अरब सागर की ओर है।",
+                    explanation_en: "The Gateway of India was built to commemorate the visit of King George V to Mumbai.",
+                    explanation_hi: "गेटवे ऑफ इंडिया का निर्माण राजा जॉर्ज पंचम की मुंबई यात्रा की याद में किया गया था।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "India Gate is located in which city?",
+                    q_hi: "इंडिया गेट किस शहर में स्थित है?",
+                    options_en: ["Mumbai", "Kolkata", "New Delhi", "Agra"],
+                    options_hi: ["मुंबई", "कोलकाता", "नई दिल्ली", "आगरा"],
+                    answer: 2,
+                    hint_en: "It is a war memorial.",
+                    hint_hi: "यह एक युद्ध स्मारक है।",
+                    explanation_en: "India Gate is a memorial to 70,000 soldiers of the British Indian Army who died in WWI.",
+                    explanation_hi: "इंडिया गेट ब्रिटिश भारतीय सेना के 70,000 सैनिकों का स्मारक है जो प्रथम विश्व युद्ध में मारे गए थे।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Who was the first Prime Minister of India?",
+                    q_hi: "भारत के पहले प्रधानमंत्री कौन थे?",
+                    options_en: ["Lal Bahadur Shastri", "Jawaharlal Nehru", "Indira Gandhi", "Gulzarilal Nanda"],
+                    options_hi: ["लाल बहादुर शास्त्री", "जवाहरलाल नेहरू", "इंदिरा गांधी", "गुलजारीलाल नंदा"],
+                    answer: 1,
+                    hint_en: "His birthday is celebrated as Children's Day.",
+                    hint_hi: "उनका जन्मदिन बाल दिवस के रूप में मनाया जाता है।",
+                    explanation_en: "Jawaharlal Nehru served as the first Prime Minister of independent India.",
+                    explanation_hi: "जवाहरलाल नेहरू ने स्वतंत्र भारत के पहले प्रधानमंत्री के रूप में कार्य किया।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Who is known as the 'Father of the Indian Constitution'?",
+                    q_hi: "भारतीय संविधान के जनक के रूप में किसे जाना जाता है?",
+                    options_en: ["Mahatma Gandhi", "Jawaharlal Nehru", "Dr. B.R. Ambedkar", "Sardar Patel"],
+                    options_hi: ["महात्मा गांधी", "जवाहरलाल नेहरू", "डॉ. बी.आर. अंबेडकर", "सरदार पटेल"],
+                    answer: 2,
+                    hint_en: "He was the chairman of the Drafting Committee.",
+                    hint_hi: "वे मसौदा समिति के अध्यक्ष थे।",
+                    explanation_en: "Dr. B.R. Ambedkar was the chief architect of the Constitution of India.",
+                    explanation_hi: "डॉ. बी.आर. अंबेडकर भारत के संविधान के मुख्य वास्तुकार थे।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Fundamental Rights are mentioned in which part of the Indian Constitution?",
+                    q_hi: "भारतीय संविधान के किस भाग में मौलिक अधिकारों का उल्लेख है?",
+                    options_en: ["Part II", "Part III", "Part IV", "Part V"],
+                    options_hi: ["भाग II", "भाग III", "भाग IV", "भाग V"],
+                    answer: 1,
+                    hint_en: "It follows the citizenship section.",
+                    hint_hi: "यह नागरिकता अनुभाग के बाद आता है।",
+                    explanation_en: "Part III of the Constitution (Articles 12 to 35) deals with Fundamental Rights.",
+                    explanation_hi: "संविधान का भाग III (अनुच्छेद 12 से 35) मौलिक अधिकारों से संबंधित है।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "Which gas is most abundant in the Earth's atmosphere?",
+                    q_hi: "पृथ्वी के वायुमंडल में कौन सी गैस सबसे प्रचुर मात्रा में है?",
+                    options_en: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
+                    options_hi: ["ऑक्सीजन", "कार्बन डाइऑक्साइड", "नाइट्रोजन", "आर्गन"],
+                    answer: 2,
+                    hint_en: "It makes up about 78% of the atmosphere.",
+                    hint_hi: "यह वायुमंडल का लगभग 78% हिस्सा बनाता है।",
+                    explanation_en: "Nitrogen accounts for about 78.08% of the Earth's atmosphere.",
+                    explanation_hi: "पृथ्वी के वायुमंडल में नाइट्रोजन लगभग 78.08% है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "Which is the highest civilian award in India?",
+                    q_hi: "भारत का सर्वोच्च नागरिक सम्मान कौन सा है?",
+                    options_en: ["Padma Vibhushan", "Bharat Ratna", "Param Vir Chakra", "Padma Bhushan"],
+                    options_hi: ["पद्म विभूषण", "भारत रत्न", "परमवीर चक्र", "पद्म भूषण"],
+                    answer: 1,
+                    hint_en: "It is awarded for exceptional service.",
+                    hint_hi: "यह असाधारण सेवा के लिए दिया जाता है।",
+                    explanation_en: "Bharat Ratna is the highest civilian award of the Republic of India.",
+                    explanation_hi: "भारत रत्न भारतीय गणराज्य का सर्वोच्च नागरिक पुरस्कार है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Scurvy is caused by the deficiency of which vitamin?",
+                    q_hi: "स्कर्वी किस विटामिन की कमी से होता है?",
+                    options_en: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+                    options_hi: ["विटामिन ए", "विटामिन बी", "विटामिन सी", "विटामिन डी"],
+                    answer: 2,
+                    hint_en: "It is found in citrus fruits like lemons.",
+                    hint_hi: "यह नींबू जैसे खट्टे फलों में पाया जाता है।",
+                    explanation_en: "Scurvy is a disease resulting from a lack of Vitamin C (ascorbic acid).",
+                    explanation_hi: "स्कर्वी विटामिन सी (एस्कॉर्बिक एसिड) की कमी से होने वाली बीमारी है।",
+                    difficulty: "medium"
+                },
+                {
+                    q_en: "The study of birds is known as?",
+                    q_hi: "पक्षियों के अध्ययन को क्या कहा जाता है?",
+                    options_en: ["Entomology", "Ornithology", "Ichthyology", "Herpetology"],
+                    options_hi: ["कीटविज्ञान", "पक्षीविज्ञान", "मत्स्यविज्ञान", "सरीसृपविज्ञान"],
+                    answer: 1,
+                    hint_en: "It starts with 'O'.",
+                    hint_hi: "यह 'O' से शुरू होता है।",
+                    explanation_en: "Ornithology is a branch of zoology that concerns the study of birds.",
+                    explanation_hi: "पक्षीविज्ञान (Ornithology) प्राणीशास्त्र की एक शाखा है जो पक्षियों के अध्ययन से संबंधित है।",
+                    difficulty: "hard"
+                },
+                {
+                    q_en: "What is the capital of Japan?",
+                    q_hi: "जापान की राजधानी क्या है?",
+                    options_en: ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+                    options_hi: ["बीजिंग", "सियोल", "टोक्यो", "बैंकॉक"],
+                    answer: 2,
+                    hint_en: "It was formerly known as Edo.",
+                    hint_hi: "इसे पहले एदो के नाम से जाना जाता था।",
+                    explanation_en: "Tokyo is the capital and largest city of Japan.",
+                    explanation_hi: "टोक्यो जापान की राजधानी और सबसे बड़ा शहर है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the largest planet in our solar system?",
+                    q_hi: "हमारे सौरमंडल का सबसे बड़ा ग्रह कौन सा है?",
+                    options_en: ["Earth", "Saturn", "Jupiter", "Neptune"],
+                    options_hi: ["पृथ्वी", "शनि", "बृहस्पति", "वरुण"],
+                    answer: 2,
+                    hint_en: "It has a Great Red Spot.",
+                    hint_hi: "इसमें एक ग्रेट रेड स्पॉट है।",
+                    explanation_en: "Jupiter is the largest planet in the solar system, more than twice as massive as all other planets combined.",
+                    explanation_hi: "बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है, जो अन्य सभी ग्रहों के संयुक्त द्रव्यमान से दोगुने से भी अधिक विशाल है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "What is the currency of the United States of America?",
+                    q_hi: "संयुक्त राज्य अमेरिका की मुद्रा क्या है?",
+                    options_en: ["Euro", "Pound", "Dollar", "Yen"],
+                    options_hi: ["यूरो", "पाउंड", "डॉलर", "येन"],
+                    answer: 2,
+                    hint_en: "It uses the symbol $. ",
+                    hint_hi: "यह $ प्रतीक का उपयोग करता है।",
+                    explanation_en: "The United States Dollar is the official currency of the USA.",
+                    explanation_hi: "संयुक्त राज्य डॉलर अमेरिका की आधिकारिक मुद्रा है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which planet is famous for its prominent rings?",
+                    q_hi: "कौन सा ग्रह अपने प्रमुख छल्लों के लिए प्रसिद्ध है?",
+                    options_en: ["Jupiter", "Saturn", "Uranus", "Mars"],
+                    options_hi: ["बृहस्पति", "शनि", "अरुण", "मंगल"],
+                    answer: 1,
+                    hint_en: "It is the sixth planet from the Sun.",
+                    hint_hi: "यह सूर्य से छठा ग्रह है।",
+                    explanation_en: "Saturn is best known for its fabulous ring system, made of ice and rock.",
+                    explanation_hi: "शनि अपने शानदार वलय तंत्र के लिए जाना जाता है, जो बर्फ और चट्टान से बना है।",
+                    difficulty: "easy"
+                },
+                {
+                    q_en: "Which is the largest living animal in the world?",
+                    q_hi: "दुनिया का सबसे बड़ा जीवित प्राणी कौन सा है?",
+                    options_en: ["Elephant", "Blue Whale", "Giraffe", "Shark"],
+                    options_hi: ["हाथी", "ब्लू व्हेल", "जिराफ", "शार्क"],
+                    answer: 1,
+                    hint_en: "It is a marine mammal.",
+                    hint_hi: "यह एक समुद्री स्तनधारी है।",
+                    explanation_en: "The Blue Whale is the largest animal known to have ever existed.",
+                    explanation_hi: "ब्लू व्हेल अब तक का सबसे बड़ा ज्ञात प्राणी है।",
+                    difficulty: "easy"
                 }
             ],
             2: [], 3: [], 4: [], 5: [], 6: []
@@ -518,28 +998,3 @@ const quizData = {
     }
 };
 
-function populateMockQuestions() {
-    const difficulties = ["easy", "medium", "hard"];
-    for (let cat in quizData) {
-        for (let sec in quizData[cat].sections) {
-            const existingCount = quizData[cat].sections[sec].length;
-            for (let i = existingCount + 1; i <= 50; i++) {
-                const diff = difficulties[Math.floor(Math.random() * 3)];
-                quizData[cat].sections[sec].push({
-                    q_en: `${quizData[cat].title_en} Question ${i} in Section ${sec}`,
-                    q_hi: `${quizData[cat].title_hi} प्रश्न ${i} अनुभाग ${sec} में`,
-                    options_en: ["Option A", "Option B", "Option C", "Option D"],
-                    options_hi: ["विकल्प ए", "विकल्प बी", "विकल्प सी", "विकल्प डी"],
-                    answer: Math.floor(Math.random() * 4),
-                    hint_en: `Hint for ${quizData[cat].title_en} Q${i}`,
-                    hint_hi: `${quizData[cat].title_hi} प्रश्न ${i} के लिए संकेत`,
-                    explanation_en: `Explanation for ${quizData[cat].title_en} Question ${i}. This is a detailed fact about the correct answer.`,
-                    explanation_hi: `${quizData[cat].title_hi} प्रश्न ${i} का विवरण। यह सही उत्तर के बारे में एक विस्तृत तथ्य है।`,
-                    difficulty: diff
-                });
-            }
-        }
-    }
-}
-
-populateMockQuestions();
